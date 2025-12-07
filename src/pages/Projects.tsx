@@ -12,7 +12,7 @@ const Projects = () => {
                 <meta name="description" content="Explore my portfolio of web development projects, featuring React, WordPress, and full-stack applications." />
             </Helmet>
 
-            <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-black">
+            <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-slate-900">
                 <PageHeader
                     title="Featured Projects"
                     subtitle="A showcase of my technical milestones."
