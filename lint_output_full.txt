@@ -1,0 +1,5 @@
+
+> muhammed-ajmal-p-portfolio@1.0.0 lint
+> eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0
+
+

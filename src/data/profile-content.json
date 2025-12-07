@@ -1,0 +1,183 @@
+{
+  "personal": {
+    "name": "Muhammed Ajmal P",
+    "title": "WordPress Developer & SEO Specialist",
+    "location": "Malappuram, Kerala",
+    "email": "hi@moajmalp.in",
+    "phone": "9526271193",
+    "cvPath": "/assets/Ajmal-p-CV-01.pdf"
+  },
+  "hero": {
+    "tagline": "WordPress Developer & SEO Specialist",
+    "subtitle": "Building scalable websites and optimizing digital presence for businesses worldwide",
+    "cta": {
+      "downloadCV": "Download CV",
+      "contact": "Contact Me"
+    }
+  },
+  "about": {
+    "summary": "Experienced WordPress Developer and SEO Specialist with a proven track record in website development, search engine optimization, and digital marketing. Skilled in WordPress development, on-page and off-page SEO, content optimization, and website maintenance. Proficient in HTML, CSS, JavaScript, and PHP. Strong problem-solving abilities, excellent team collaboration skills, and adaptability to fast-paced environments. Currently pursuing advanced studies in Arabic Literature while maintaining active professional engagements in web development and SEO.",
+    "location": "Malappuram, Kerala"
+  },
+  "skills": {
+    "technical": [
+      {
+        "name": "WordPress Development",
+        "proficiency": 95
+      },
+      {
+        "name": "SEO (On/Off-page)",
+        "proficiency": 90
+      },
+      {
+        "name": "Content Optimization",
+        "proficiency": 88
+      },
+      {
+        "name": "Website Maintenance",
+        "proficiency": 92
+      },
+      {
+        "name": "HTML/CSS/JS",
+        "proficiency": 90
+      },
+      {
+        "name": "PHP",
+        "proficiency": 85
+      },
+      {
+        "name": "Testing",
+        "proficiency": 88
+      },
+      {
+        "name": "Problem-solving",
+        "proficiency": 90
+      },
+      {
+        "name": "Team Collaboration",
+        "proficiency": 92
+      },
+      {
+        "name": "Adaptability",
+        "proficiency": 95
+      }
+    ],
+    "languages": [
+      {
+        "name": "English",
+        "level": "Proficient"
+      },
+      {
+        "name": "Arabic",
+        "level": "Advanced (MA ongoing)"
+      },
+      {
+        "name": "Urdu",
+        "level": "Diploma"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "id": 1,
+      "title": "WordPress Developer & SEO Contributor",
+      "company": "CODO AI Innovations",
+      "location": "Remote",
+      "startDate": "June 2024",
+      "endDate": "October 2025",
+      "current": false,
+      "responsibilities": [
+        "Developed and maintained WordPress websites with custom themes and plugins",
+        "Implemented on-page and off-page SEO strategies, resulting in improved search rankings",
+        "Optimized website performance, loading speeds, and user experience",
+        "Collaborated with cross-functional teams to deliver high-quality web solutions",
+        "Conducted SEO audits and provided actionable recommendations for content optimization"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Software & Website Tester",
+      "company": "Annoor Online Academy",
+      "location": "Remote",
+      "startDate": "May 2024",
+      "endDate": "May 2025",
+      "current": false,
+      "responsibilities": [
+        "Performed comprehensive testing of web applications and software products",
+        "Identified and documented bugs, usability issues, and performance bottlenecks",
+        "Created and executed test cases to ensure quality assurance standards",
+        "Collaborated with development teams to resolve issues and improve product quality",
+        "Maintained detailed test documentation and reports for stakeholders"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Finance Coordinator / Albedo Educator",
+      "company": "Part-time Position",
+      "location": "Remote",
+      "startDate": "June 2025",
+      "endDate": "October 2025",
+      "current": false,
+      "responsibilities": [
+        "Managed financial coordination tasks and maintained accurate records",
+        "Delivered educational content and support as an Albedo Educator",
+        "Balanced multiple responsibilities while maintaining high performance standards",
+        "Collaborated with team members to ensure smooth operations",
+        "Adapted quickly to changing requirements and priorities"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": 1,
+      "degree": "MA in Arabic Literature",
+      "institution": "MANUU Hyderabad",
+      "location": "Hyderabad",
+      "startDate": "2024",
+      "endDate": "Present",
+      "current": true,
+      "description": "Pursuing Master's degree in Arabic Literature"
+    },
+    {
+      "id": 2,
+      "degree": "BA in Sociology",
+      "institution": "University of Calicut",
+      "location": "Calicut",
+      "startDate": "2020",
+      "endDate": "2023",
+      "current": false,
+      "description": "Bachelor's degree in Sociology"
+    },
+    {
+      "id": 3,
+      "degree": "Wafy — Coordination of Islamic Colleges",
+      "institution": "Coordination of Islamic Colleges",
+      "location": "Kerala",
+      "startDate": "2017",
+      "endDate": "2025",
+      "current": false,
+      "description": "Completed Wafy program in Coordination of Islamic Colleges"
+    }
+  ],
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "Something went wrong. Please try again."
+    }
+  },
+  "seo": {
+    "title": "Muhammed Ajmal P - WordPress Developer & SEO Specialist",
+    "description": "Professional WordPress Developer and SEO Specialist based in Malappuram, Kerala. Expert in website development, search engine optimization, and digital marketing.",
+    "keywords": "WordPress Developer, SEO Specialist, Web Developer, Digital Marketing, Website Development, Kerala",
+    "author": "Muhammed Ajmal P",
+    "ogImage": "/og-image.jpg"
+  }
+}
+

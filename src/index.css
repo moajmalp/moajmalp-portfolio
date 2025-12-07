@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .animate-marquee {
+    animation: marquee 25s linear infinite;
+  }
+
+  .animate-marquee2 {
+    animation: marquee2 25s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  @keyframes marquee2 {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
+  /* Pause on hover if desired, but user asked for continuous */
+  /* .group:hover .animate-marquee { animation-play-state: paused; } */
+}
+
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 bg-fixed min-h-screen text-slate-900 dark:text-white;
+    transition: background-color 0.5s ease, color 0.5s ease;
+  }
+
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+}
+
+@layer utilities {
+  @keyframes gradient {
+
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+  }
+}
+
+@layer utilities {
+  .print-hidden {
+    @media print {
+      display: none !important;
+    }
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    @apply bg-white text-black;
+  }
+
+  .dark {
+    @apply bg-white text-black;
+  }
+
+  nav,
+  footer,
+  button {
+    @apply print-hidden;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+}
