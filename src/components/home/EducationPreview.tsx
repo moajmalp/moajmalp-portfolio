@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Briefcase, Calendar, MapPin, GraduationCap } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 
 const EducationPreview = () => {

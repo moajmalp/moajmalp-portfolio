@@ -1,19 +1,16 @@
 import { motion } from 'framer-motion';
 import { profileData } from '../../data/profileData';
 import {
-  Code, Layers, Database, Smartphone, Globe,
-  Server, Cpu, Terminal, Braces, TrendingUp
+  Code, Layers, Database, Globe,
+  TrendingUp, FileText, Settings,
+  CheckCircle, Lightbulb, Users, Zap
 } from 'lucide-react';
 
-// Fallback icon map if exact matches aren't found in Lucide
-// Note: Lucide doesn't have all brand icons, so we map to generic ones or use what's available
-const getIcon = (iconName: string) => {
-  switch (iconName) {
-    case 'WordPress': return Globe;
-    case 'SEO': return TrendingUp;
-    case 'React': return Code;
-    default: return Layers;
-  }
+// Create a mapping of icon names string to Lucide components
+const iconMap: Record<string, any> = {
+  Code, Layers, Database, Globe,
+  TrendingUp, FileText, Settings,
+  CheckCircle, Lightbulb, Users, Zap
 };
 
 const TechStackSlider = () => {
@@ -44,20 +41,22 @@ const TechStackSlider = () => {
             ease: "linear"
           }}
         >
-          {techStack.map((tech, index) => (
-            <div
-              key={`${tech.name}-${index}`}
-              className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-default"
-            >
-              {/* We can use the icon string from data to look up a real icon if we imported them all, 
-                                but for now we'll use a generic Placeholder or text. 
-                                Since valid Lucide icons are strings, we can try to render them if we had a dynamic map.
-                                For safety/speed, we display the Name. */}
-              <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-600 to-gray-400 dark:from-gray-300 dark:to-gray-500 hover:from-primary-500 hover:to-purple-500 transition-all">
-                {tech.name}
-              </span>
-            </div>
-          ))}
+          {techStack.map((tech, index) => {
+            const Icon = iconMap[tech.icon] || Code;
+            return (
+              <div
+                key={`${tech.name}-${index}`}
+                className="flex items-center gap-3 opacity-60 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 cursor-default group"
+              >
+                <div className="p-2 bg-white dark:bg-gray-800 rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
+                  <Icon className="w-6 h-6 text-primary-500" />
+                </div>
+                <span className="text-lg md:text-xl font-bold text-gray-700 dark:text-gray-300 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  {tech.name}
+                </span>
+              </div>
+            );
+          })}
         </motion.div>
       </div>
     </section>
