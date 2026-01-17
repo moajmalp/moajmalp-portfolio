@@ -15,7 +15,6 @@ export default function About() {
             description: 'Excellent communication skills with clients and team members, ensuring clear understanding and smooth collaboration.',
             gradient: 'from-blue-500/20 to-cyan-500/20',
             iconColor: 'text-blue-400',
-            borderColor: 'border-blue-400/30',
         },
         {
             icon: Lightbulb,
@@ -23,7 +22,6 @@ export default function About() {
             description: 'Creative problem-solving approach with analytical thinking to overcome challenges and deliver innovative solutions.',
             gradient: 'from-yellow-500/20 to-orange-500/20',
             iconColor: 'text-yellow-400',
-            borderColor: 'border-yellow-400/30',
         },
         {
             icon: Zap,
@@ -31,7 +29,6 @@ export default function About() {
             description: 'Quick to adapt to new technologies, methodologies, and changing project requirements with flexibility.',
             gradient: 'from-purple-500/20 to-pink-500/20',
             iconColor: 'text-purple-400',
-            borderColor: 'border-purple-400/30',
         },
         {
             icon: BookOpen,
@@ -39,7 +36,6 @@ export default function About() {
             description: 'Eager to learn new skills and continuously improve, staying updated with latest industry trends and best practices.',
             gradient: 'from-green-500/20 to-emerald-500/20',
             iconColor: 'text-green-400',
-            borderColor: 'border-green-400/30',
         },
     ];
 
@@ -158,7 +154,6 @@ export default function About() {
                                 description={feature.description}
                                 gradient={feature.gradient}
                                 iconColor={feature.iconColor}
-                                borderColor={feature.borderColor}
                                 index={index}
                             />
                         ))}
