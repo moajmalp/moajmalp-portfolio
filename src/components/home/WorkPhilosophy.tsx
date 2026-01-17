@@ -42,7 +42,7 @@ const WorkPhilosophy = () => {
                     className="text-center mb-20"
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Approach</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
                         My Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Philosophy</span>
                     </h2>
                 </motion.div>
@@ -63,10 +63,10 @@ const WorkPhilosophy = () => {
                                     <div className={`absolute inset-0 bg-current opacity-10 blur-xl ${item.iconColor}`}></div>
                                     <item.icon className={`w-10 h-10 ${item.iconColor} relative z-10`} />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 tracking-tight">
                                     {item.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-lg font-medium">
+                                <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base font-medium">
                                     {item.description}
                                 </p>
                             </div>

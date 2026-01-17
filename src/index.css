@@ -68,6 +68,12 @@
     background-size: 200% 200%;
     animation: gradient 3s ease infinite;
   }
+
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
 }
 
 @layer utilities {

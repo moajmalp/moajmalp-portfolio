@@ -72,7 +72,7 @@ const CallToAction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-4xl md:text-5xl font-bold text-white mb-4"
+            className="text-3xl md:text-4xl font-bold text-white mb-4"
           >
             Ready to Start Your{' '}
             <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
@@ -84,7 +84,7 @@ const CallToAction = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
-            className="text-gray-300 text-lg mb-8 max-w-2xl mx-auto"
+            className="text-gray-300 text-sm md:text-base mb-8 max-w-2xl mx-auto"
           >
             Let's work together to bring your vision to life. I'm here to help you achieve your goals with professional web development and SEO services.
           </motion.p>

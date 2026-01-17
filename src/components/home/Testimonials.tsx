@@ -61,7 +61,7 @@ const Testimonials = () => {
                     className="text-center mb-16"
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-semibold tracking-wider uppercase text-sm">Success Stories</span>
-                    <h2 className="text-3xl md:text-5xl font-bold mt-2 text-gray-900 dark:text-white">
+                    <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-900 dark:text-white">
                         Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Testimonials</span>
                     </h2>
                 </motion.div>
@@ -98,7 +98,7 @@ const Testimonials = () => {
                                 </div>
 
                                 <div className="flex flex-col items-center text-center mt-6">
-                                    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 italic mb-8 leading-relaxed">
+                                    <p className="text-base text-gray-600 dark:text-gray-300 italic mb-8 leading-relaxed">
                                         "{currentTestimonial.content}"
                                     </p>
 
@@ -112,7 +112,7 @@ const Testimonials = () => {
                                             />
                                         </div>
                                         <div className="text-left">
-                                            <h4 className="font-bold text-gray-900 dark:text-white text-lg">
+                                            <h4 className="font-bold text-gray-900 dark:text-white text-base">
                                                 {currentTestimonial.name}
                                             </h4>
                                             <p className="text-sm text-primary-600 dark:text-primary-400 font-medium">

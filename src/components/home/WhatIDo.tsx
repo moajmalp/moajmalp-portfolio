@@ -18,32 +18,28 @@ const WhatIDo = () => {
             title: "Web Development",
             description: "Building responsive, fast, and secure websites tailored to your specific business needs using modern technologies.",
             gradient: "from-blue-500/20 to-cyan-500/20",
-            iconColor: "text-blue-400",
-            borderColor: "border-blue-400/30"
+            iconColor: "text-blue-400"
         },
         {
             icon: Search,
             title: "SEO Optimization",
             description: "Improving your website's visibility on search engines to attract more organic traffic and potential customers.",
             gradient: "from-green-500/20 to-emerald-500/20",
-            iconColor: "text-green-400",
-            borderColor: "border-green-400/30"
+            iconColor: "text-green-400"
         },
         {
             icon: Layout,
             title: "WordPress Solutions",
             description: "Custom WordPress theme and plugin development to create unique and manageable content management systems.",
             gradient: "from-purple-500/20 to-pink-500/20",
-            iconColor: "text-purple-400",
-            borderColor: "border-purple-400/30"
+            iconColor: "text-purple-400"
         },
         {
             icon: BarChart,
             title: "Digital Strategy",
             description: "Analyzing market trends and user behavior to develop effective digital strategies for business growth.",
             gradient: "from-orange-500/20 to-yellow-500/20",
-            iconColor: "text-orange-400",
-            borderColor: "border-orange-400/30"
+            iconColor: "text-orange-400"
         }
     ];
 
@@ -72,9 +68,9 @@ const WhatIDo = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="text-4xl md:text-5xl font-bold text-white mb-6"
+                        className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight"
                     >
-                        What I <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-purple-500">Do Best</span>
+                        What I <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Do Best</span>
                     </motion.h2>
                     <div className="w-24 h-1.5 bg-gradient-to-r from-primary-400 to-purple-500 mx-auto rounded-full"></div>
                 </motion.div>

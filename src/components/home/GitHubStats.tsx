@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Github, GitCommit, Layout, Star, GitBranch } from 'lucide-react';
@@ -37,7 +37,7 @@ const GitHubStats = () => {
                     className="text-center mb-16"
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Open Source Ecosystem</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
                         GitHub & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600">Contributions</span>
                     </h2>
                 </motion.div>
@@ -57,7 +57,7 @@ const GitHubStats = () => {
                                         <Github className="w-6 h-6 text-white dark:text-gray-900" />
                                     </div>
                                     <div>
-                                        <h3 className="font-bold text-gray-900 dark:text-white text-xl">Git Activity</h3>
+                                        <h3 className="font-bold text-gray-900 dark:text-white text-lg">Git Activity</h3>
                                         <p className="text-gray-500 dark:text-gray-400 text-sm font-medium">Last 12 months</p>
                                     </div>
                                 </div>
@@ -108,7 +108,7 @@ const GitHubStats = () => {
                                         <stat.icon className={`w-6 h-6 ${stat.color}`} />
                                     </div>
                                     <p className="text-[10px] font-black text-gray-400 dark:text-gray-500 mb-1 uppercase tracking-[0.15em]">{stat.label}</p>
-                                    <p className="text-3xl font-black text-gray-900 dark:text-white leading-none">{stat.value}</p>
+                                    <p className="text-2xl font-black text-gray-900 dark:text-white leading-none">{stat.value}</p>
                                 </motion.div>
                             ))}
                         </div>
@@ -120,7 +120,7 @@ const GitHubStats = () => {
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}
-                                className="relative flex items-center gap-3 px-12 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-black text-lg transition-all duration-300 shadow-2xl"
+                                className="relative flex items-center gap-3 px-12 py-5 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-full font-black text-base transition-all duration-300 shadow-2xl"
                             >
                                 <Github className="w-6 h-6" />
                                 <span>Explore My Codebase</span>
