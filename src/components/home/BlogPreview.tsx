@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+"use client";
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Tag } from 'lucide-react';
 import { profileData } from '../../data/profileData';
@@ -34,7 +36,7 @@ const BlogPreview = () => {
                         viewport={{ once: true }}
                     >
                         <Link
-                            to="/blog"
+                            href="/blog"
                             className="group inline-flex items-center space-x-2 text-primary-600 dark:text-primary-400 font-bold text-lg hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
                         >
                             <span>Read All Articles</span>
@@ -78,7 +80,7 @@ const BlogPreview = () => {
                                 </div>
 
                                 <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors leading-snug">
-                                    <Link to={blog.url} className="block">
+                                    <Link href={blog.url} className="block">
                                         {blog.title}
                                     </Link>
                                 </h3>
@@ -89,7 +91,7 @@ const BlogPreview = () => {
 
                                 <div className="mt-auto pt-6 border-t border-gray-100 dark:border-gray-800">
                                     <Link
-                                        to={blog.url}
+                                        href={blog.url}
                                         className="inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors"
                                     >
                                         Read More <ArrowRight className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" />

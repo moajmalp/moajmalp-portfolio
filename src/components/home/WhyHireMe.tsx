@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
 
@@ -103,7 +105,7 @@ const WhyHireMe = () => {
                   }}
                 />
               ))}
-              
+
               {/* Center Icon Grid */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="grid grid-cols-2 gap-4">

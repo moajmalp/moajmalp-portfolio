@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { Download, Mail, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { profileData } from '../../data/profileData';

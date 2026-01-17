@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+"use client";
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Github } from 'lucide-react';
 import { profileData } from '../../data/profileData';
@@ -37,7 +39,7 @@ const ProjectsPreview = () => {
                         viewport={{ once: true }}
                     >
                         <Link
-                            to="/projects"
+                            href="/projects"
                             className="group inline-flex items-center space-x-2 bg-gray-100 dark:bg-gray-800 hover:bg-primary-600 hover:text-white text-gray-900 dark:text-white px-6 py-3 rounded-full font-semibold transition-all duration-300"
                         >
                             <span>View All Projects</span>

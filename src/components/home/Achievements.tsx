@@ -1,4 +1,6 @@
-import { useRef } from 'react';
+"use client";
+
+import { useRef, useState, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Code, Clock, Users, Settings } from 'lucide-react';
 import { profileData } from '../../data/profileData';
@@ -34,9 +36,9 @@ const Counter = ({ from, to, duration, suffix = '' }: { from: number; to: number
 };
 
 const CountUp = ({ end, duration }: { end: number; duration: number }) => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     let start = 0;
     const increment = end / (duration * 60);
     const handle = setInterval(() => {
@@ -55,7 +57,7 @@ const CountUp = ({ end, duration }: { end: number; duration: number }) => {
   return <>{Number.isInteger(end) ? Math.floor(count) : count.toFixed(1)}</>;
 };
 
-import React from 'react';
+
 
 const Achievements = () => {
   return (

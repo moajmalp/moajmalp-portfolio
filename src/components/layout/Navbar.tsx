@@ -1,5 +1,8 @@
+"use client";
+
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, LogIn } from 'lucide-react';
 import { profileData } from '../../data/profileData';
@@ -8,7 +11,7 @@ import ThemeToggle from '../ThemeToggle';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navLinks = [
     { path: '/', label: 'Home' },
@@ -27,22 +30,22 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => pathname === path;
 
   return (
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-          ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-lg border-b border-gray-200/50 dark:border-gray-800/50'
-          : 'bg-transparent'
+        ? 'bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-lg border-b border-gray-200/50 dark:border-gray-800/50'
+        : 'bg-transparent'
         }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand */}
           <Link
-            to="/"
+            href="/"
             className="flex items-center space-x-3 group min-w-[140px]"
           >
             <div className="relative">
@@ -69,13 +72,13 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
-                  to={link.path}
+                  href={link.path}
                   className="relative px-4 py-2 text-sm font-medium transition-colors"
                 >
                   <span
                     className={`relative z-10 transition-colors ${isActive(link.path)
-                        ? 'text-primary-600 dark:text-primary-400 font-semibold'
-                        : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
+                      ? 'text-primary-600 dark:text-primary-400 font-semibold'
+                      : 'text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400'
                       }`}
                   >
                     {link.label}
@@ -101,7 +104,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link
-                to="/login"
+                href="/login"
                 className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-primary-500/25 font-semibold text-sm"
               >
                 <LogIn className="w-4 h-4 mr-2" />
@@ -137,11 +140,11 @@ const Navbar = () => {
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
-                  to={link.path}
+                  href={link.path}
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`block px-4 py-3 rounded-lg transition-colors ${isActive(link.path)
-                      ? 'bg-primary-50/50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-semibold'
-                      : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50'
+                    ? 'bg-primary-50/50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 font-semibold'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800/50'
                     }`}
                 >
                   {link.label}
@@ -149,7 +152,7 @@ const Navbar = () => {
               ))}
               <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
                 <Link
-                  to="/login"
+                  href="/login"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="block w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-semibold text-center shadow-md"
                 >

@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, GraduationCap } from 'lucide-react';
 import { profileData } from '../../data/profileData';

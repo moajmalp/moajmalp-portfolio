@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { profileData } from '../../data/profileData';
 import {

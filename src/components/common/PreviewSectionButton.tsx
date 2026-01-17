@@ -1,4 +1,6 @@
-import { Link } from 'react-router-dom';
+"use client";
+
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
@@ -10,7 +12,7 @@ interface PreviewSectionButtonProps {
 const PreviewSectionButton = ({ to, label }: PreviewSectionButtonProps) => {
     return (
         <div className="flex justify-center mt-12">
-            <Link to={to}>
+            <Link href={to}>
                 <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

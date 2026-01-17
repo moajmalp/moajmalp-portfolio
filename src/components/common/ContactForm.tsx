@@ -1,3 +1,5 @@
+"use client";
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send } from 'lucide-react';
@@ -84,8 +86,8 @@ const ContactForm = ({ formLabels }: ContactFormProps) => {
                     type="submit"
                     disabled={status === 'sending' || status === 'success'}
                     className={`w-full py-4 rounded-lg font-bold text-lg flex items-center justify-center gap-2 transition-all ${status === 'success'
-                            ? 'bg-green-500/20 text-green-400 border border-green-500/30'
-                            : 'bg-gradient-to-r from-primary-500 to-purple-600 hover:from-primary-600 hover:to-purple-700 text-white shadow-lg hover:shadow-primary-500/25'
+                        ? 'bg-green-500/20 text-green-400 border border-green-500/30'
+                        : 'bg-gradient-to-r from-primary-500 to-purple-600 hover:from-primary-600 hover:to-purple-700 text-white shadow-lg hover:shadow-primary-500/25'
                         } disabled:opacity-70 disabled:cursor-not-allowed`}
                 >
                     {status === 'sending' ? (

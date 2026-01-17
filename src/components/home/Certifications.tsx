@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion';
 import { Award, CheckCircle2, TrendingUp, Code } from 'lucide-react';
 import { profileData } from '../../data/profileData';
