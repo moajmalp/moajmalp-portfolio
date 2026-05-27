@@ -7,8 +7,8 @@ import PageHeader from '../../components/common/PageHeader';
 
 export default function Education() {
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
-            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-slate-900">
+            <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <PageHeader
                     subtitle="EDUCATION"
                     title="Academic Background"
@@ -17,7 +17,7 @@ export default function Education() {
                 />
 
                 {/* Step Timeline */}
-                <div className="relative">
+                <div className="relative mt-12">
                     {profileData.education.map((edu, index) => (
                         <motion.div
                             key={edu.id}
@@ -33,7 +33,7 @@ export default function Education() {
                                     <motion.div
                                         whileHover={{ scale: 1.2, rotate: 360 }}
                                         transition={{ duration: 0.6 }}
-                                        className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center border-4 border-slate-900 shadow-lg z-10"
+                                        className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-full flex items-center justify-center border-4 border-gray-50 dark:border-slate-900 shadow-lg z-10"
                                     >
                                         <span className="text-white font-bold text-xl">{index + 1}</span>
                                     </motion.div>
@@ -45,10 +45,11 @@ export default function Education() {
                                 {/* Content Card */}
                                 <motion.div
                                     whileHover={{ y: -10, scale: 1.02 }}
-                                    className="flex-1 backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/10 shadow-lg hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
+                                    className="flex-1 bg-white dark:bg-gray-900 rounded-3xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
                                 >
                                     {/* Shine Effect */}
                                     <motion.div
+                                        initial={{ skewX: -20 }}
                                         animate={{
                                             x: ['-100%', '200%'],
                                         }}
@@ -58,54 +59,53 @@ export default function Education() {
                                             repeatDelay: 2,
                                             ease: 'easeInOut',
                                         }}
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
-                                        style={{ transform: 'skewX(-20deg)' }}
+                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent"
                                     />
 
                                     {/* Logo Placeholder */}
                                     <div className="flex items-start gap-4 mb-4">
-                                        <div className="w-16 h-16 bg-gradient-to-br from-primary-500/20 to-purple-500/20 rounded-xl flex items-center justify-center border border-primary-400/30 group-hover:border-primary-400/50 transition-colors flex-shrink-0">
-                                            <GraduationCap className="w-8 h-8 text-primary-400" />
+                                        <div className="w-16 h-16 bg-gradient-to-br from-primary-500/10 to-purple-500/10 rounded-xl flex items-center justify-center border border-primary-500/20 group-hover:border-primary-500/40 transition-colors flex-shrink-0">
+                                            <GraduationCap className="w-8 h-8 text-primary-500 dark:text-primary-400" />
                                         </div>
                                         <div className="flex-1">
-                                            <h3 className="text-2xl font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors">
+                                            <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
                                                 {edu.degree}
                                             </h3>
-                                            <p className="text-primary-400 font-medium mb-2">
+                                            <p className="text-primary-500 dark:text-primary-400 font-bold mb-2">
                                                 {edu.institution}
                                             </p>
                                             {edu.current && (
-                                                <span className="inline-block px-3 py-1 bg-primary-500/20 text-primary-400 rounded-full text-xs font-semibold border border-primary-400/30">
+                                                <span className="inline-block px-3 py-1 bg-primary-500/10 text-primary-500 dark:text-primary-400 rounded-full text-xs font-bold border border-primary-500/20">
                                                     Ongoing
                                                 </span>
                                             )}
                                         </div>
                                     </div>
 
-                                    <div className="space-y-3 text-sm text-gray-300 mb-4">
+                                    <div className="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-4 font-semibold">
                                         <div className="flex items-center gap-2">
-                                            <Calendar className="w-4 h-4 text-primary-400" />
+                                            <Calendar className="w-4 h-4 text-primary-500 dark:text-primary-400" />
                                             <span>
                                                 {edu.startDate} - {edu.current ? 'Present' : edu.endDate}
                                             </span>
                                         </div>
                                         <div className="flex items-center gap-2">
-                                            <MapPin className="w-4 h-4 text-primary-400" />
+                                            <MapPin className="w-4 h-4 text-primary-500 dark:text-primary-400" />
                                             <span>{edu.location}</span>
                                         </div>
                                     </div>
 
                                     {edu.description && (
-                                        <p className="text-gray-200 leading-relaxed">
+                                        <p className="text-gray-600 dark:text-gray-400 leading-relaxed font-semibold">
                                             {edu.description}
                                         </p>
                                     )}
 
                                     {/* Award Badge for Completed */}
                                     {!edu.current && (
-                                        <div className="mt-4 flex items-center gap-2 text-primary-400">
+                                        <div className="mt-4 flex items-center gap-2 text-primary-500 dark:text-primary-400">
                                             <Award className="w-4 h-4" />
-                                            <span className="text-sm font-semibold">Completed</span>
+                                            <span className="text-sm font-bold">Completed</span>
                                         </div>
                                     )}
                                 </motion.div>
@@ -114,6 +114,6 @@ export default function Education() {
                     ))}
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

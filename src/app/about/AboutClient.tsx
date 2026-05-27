@@ -91,6 +91,7 @@ export default function About() {
                             </div>
                             {/* Shine Effect */}
                             <motion.div
+                                initial={{ skewX: -20 }}
                                 animate={{
                                     x: ['-100%', '200%'],
                                 }}
@@ -101,7 +102,6 @@ export default function About() {
                                     ease: 'easeInOut',
                                 }}
                                 className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent"
-                                style={{ transform: 'skewX(-20deg)' }}
                             />
                         </div>
                     </motion.div>
