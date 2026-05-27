@@ -5,10 +5,10 @@ import { Sparkles, GraduationCap } from 'lucide-react';
 
 const LearningNow = () => {
     const learningItems = [
-        { name: "Advanced Next.js", color: "from-blue-500 to-cyan-500" },
-        { name: "TypeScript & Full-Stack Patterns", color: "from-purple-500 to-indigo-500" },
-        { name: "Cloud Deployment & Vercel", color: "from-pink-500 to-rose-500" },
-        { name: "AI Tools for Developers", color: "from-orange-500 to-amber-500" }
+        { name: "Advanced Next.js", color: "from-gray-500/10 to-gray-400/10" },
+        { name: "TypeScript & Full-Stack Patterns", color: "from-gray-500/10 to-gray-400/10" },
+        { name: "Cloud Deployment & Vercel", color: "from-gray-500/10 to-gray-400/10" },
+        { name: "AI Tools for Developers", color: "from-gray-500/10 to-gray-400/10" }
     ];
 
     return (
@@ -34,7 +34,7 @@ const LearningNow = () => {
                     className="mb-16"
                 >
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight">
-                        Currently <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Learning</span>
+                        Currently <span>Learning</span>
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base max-w-2xl mx-auto font-medium">
                         I continuously upgrade my skills to build faster, smarter, and more reliable software.
@@ -52,7 +52,7 @@ const LearningNow = () => {
                             whileHover={{ y: -8, scale: 1.05 }}
                             className="group relative"
                         >
-                            <div className={`absolute -inset-1 bg-gradient-to-r ${item.color} rounded-3xl blur-lg opacity-0 group-hover:opacity-25 transition duration-500`}></div>
+                            
                             <div className="relative flex items-center gap-4 px-8 py-5 bg-white dark:bg-white/[0.03] backdrop-blur-xl rounded-[2rem] border border-gray-200/50 dark:border-white/10 shadow-xl shadow-black/5 group-hover:border-primary-500/50 transition-all duration-300">
                                 <div className={`w-3 h-3 rounded-full bg-gradient-to-r ${item.color}`}></div>
                                 <span className="text-gray-900 dark:text-white font-black text-base">

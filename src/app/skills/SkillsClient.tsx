@@ -14,8 +14,8 @@ export default function Skills() {
     };
 
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-slate-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <PageHeader
                     subtitle="MY SKILLS"
                     title="Skills & Languages"
@@ -23,7 +23,7 @@ export default function Skills() {
                     description="A comprehensive overview of my technical expertise and language proficiency."
                 />
 
-                <div className="grid lg:grid-cols-2 gap-12">
+                <div className="grid lg:grid-cols-2 gap-12 mt-12">
                     {/* Technical Skills */}
                     <motion.div
                         initial={{ opacity: 0, x: -30 }}
@@ -31,8 +31,8 @@ export default function Skills() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-2xl font-semibold text-white mb-8 flex items-center gap-2">
-                            <span className="w-1 h-8 bg-gradient-to-b from-primary-400 to-primary-600 rounded"></span>
+                        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center gap-2">
+                            <span className="w-1 h-8 bg-gradient-to-b from-primary-500 to-primary-600 rounded"></span>
                             Technical Skills
                         </h2>
                         <div className="space-y-6">
@@ -46,22 +46,22 @@ export default function Skills() {
                                         viewport={{ once: true }}
                                         transition={{ delay: index * 0.1 }}
                                         whileHover={{ y: -5, scale: 1.02 }}
-                                        className="group backdrop-blur-xl bg-white/10 rounded-xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-primary-400/30"
+                                        className="group bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500/50 dark:hover:border-primary-500/50"
                                     >
                                         <div className="flex items-center justify-between mb-4">
                                             <div className="flex items-center space-x-3">
-                                                <div className="p-2 bg-primary-500/20 rounded-lg group-hover:bg-primary-500/30 transition-colors border border-primary-400/30">
-                                                    <IconComponent className="w-5 h-5 text-primary-400" />
+                                                <div className="p-2 bg-primary-500/10 dark:bg-primary-500/20 rounded-lg group-hover:bg-primary-500/30 transition-colors border border-primary-500/10 dark:border-primary-400/20">
+                                                    <IconComponent className="w-5 h-5 text-primary-500 dark:text-primary-400" />
                                                 </div>
-                                                <span className="text-lg font-semibold text-white">
+                                                <span className="text-lg font-semibold text-gray-900 dark:text-white">
                                                     {skill.name}
                                                 </span>
                                             </div>
-                                            <span className="text-primary-400 font-bold text-lg">
+                                            <span className="text-primary-500 dark:text-primary-400 font-bold text-lg">
                                                 {skill.proficiency}%
                                             </span>
                                         </div>
-                                        <div className="w-full bg-gray-700/50 rounded-full h-3 overflow-hidden">
+                                        <div className="w-full bg-gray-200 dark:bg-gray-800 rounded-full h-3 overflow-hidden">
                                             <motion.div
                                                 initial={{ width: 0 }}
                                                 whileInView={{ width: `${skill.proficiency}%` }}
@@ -83,8 +83,8 @@ export default function Skills() {
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-2xl font-semibold text-white mb-8 flex items-center gap-2">
-                            <span className="w-1 h-8 bg-gradient-to-b from-primary-400 to-primary-600 rounded"></span>
+                        <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-8 flex items-center gap-2">
+                            <span className="w-1 h-8 bg-gradient-to-b from-primary-500 to-primary-600 rounded"></span>
                             Languages
                         </h2>
                         <div className="grid grid-cols-2 gap-6">
@@ -96,15 +96,15 @@ export default function Skills() {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                     whileHover={{ scale: 1.05, y: -5 }}
-                                    className="backdrop-blur-xl bg-white/10 rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-white/10 hover:border-primary-400/30 text-center group"
+                                    className="bg-white dark:bg-gray-900 rounded-3xl p-6 shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-200 dark:border-gray-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 text-center group"
                                 >
                                     <div className="flex justify-center mb-4">
                                         <CircularProgress value={language.proficiency} size={100} strokeWidth={6} />
                                     </div>
-                                    <h3 className="text-xl font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors">
+                                    <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1 group-hover:text-primary-500 dark:group-hover:text-primary-400 transition-colors">
                                         {language.name}
                                     </h3>
-                                    <p className="text-primary-400 text-sm">
+                                    <p className="text-primary-500 dark:text-primary-400 text-sm font-semibold">
                                         {language.level}
                                     </p>
                                 </motion.div>
@@ -113,6 +113,6 @@ export default function Skills() {
                     </motion.div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

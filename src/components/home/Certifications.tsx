@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { Award, CheckCircle2, TrendingUp, Code, Check } from 'lucide-react';
+import { Award, CheckCircle2, TrendingUp, Code } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 
 const iconMap: Record<string, any> = {
@@ -29,7 +29,7 @@ const Certifications = () => {
                         Recognition
                     </span>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
-                        Certifications & <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Awards</span>
+                        Certifications & <span>Awards</span>
                     </h2>
                     <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base font-medium max-w-2xl mx-auto leading-relaxed">
                         Professional milestones and industry-recognized credentials that validate my expertise.
@@ -49,7 +49,7 @@ const Certifications = () => {
                                 className="group relative h-full"
                             >
                                 {/* Hover Gradient Backlight */}
-                                <div className="absolute -inset-1 bg-gradient-to-br from-primary-500/20 to-purple-500/20 rounded-[2rem] blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                                
 
                                 <div className="relative h-full bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl p-8 rounded-[2rem] border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 transition-all duration-500 flex flex-col">
                                     <div className="w-14 h-14 bg-white dark:bg-white/5 rounded-2xl flex items-center justify-center mb-8 shadow-sm group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500">

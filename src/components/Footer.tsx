@@ -70,6 +70,7 @@ const Footer = () => {
         <div className="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
           <p>&copy; {currentYear} {profileData.personal.shortName}. All rights reserved.</p>
           <div className="flex gap-6">
+            <Link href="/login" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors" target='_blank'>Admin</Link>
             <a href="#" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-primary-600 dark:hover:text-primary-400 transition-colors">Terms of Service</a>
           </div>

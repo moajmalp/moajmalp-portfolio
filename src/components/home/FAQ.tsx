@@ -22,7 +22,7 @@ const FAQ = () => {
                     className="text-center mb-12"
                 >
                     <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
-                        Frequently Asked <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Questions</span>
+                        Frequently Asked <span>Questions</span>
                     </h2>
                     <p className="text-gray-600 dark:text-gray-300">
                         Common questions about my services and work process.

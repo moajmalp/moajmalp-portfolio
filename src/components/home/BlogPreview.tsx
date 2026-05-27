@@ -29,7 +29,7 @@ const BlogPreview = () => {
                             Blog & Insights
                         </span>
                         <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
-                            Latest <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Perspectives</span>
+                            Latest <span>Perspectives</span>
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base font-medium leading-relaxed">
                             Exploring the intersection of technology, design, and strategic digital growth.
@@ -63,7 +63,7 @@ const BlogPreview = () => {
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.15 }}
                             className="group relative h-full"
                         >
-                            <div className="absolute -inset-2 bg-gradient-to-br from-primary-500/10 to-purple-500/10 rounded-[3rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                            
 
                             <div className="relative h-full flex flex-col bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl rounded-[3rem] overflow-hidden border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 transition-all duration-500">
                                 <div className="relative h-72 lg:h-80 overflow-hidden">

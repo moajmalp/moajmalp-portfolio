@@ -22,7 +22,7 @@ const EducationPreview = () => {
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Learning Journey</span>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-                        Academic <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">History</span>
+                        Academic <span>History</span>
                     </h2>
                 </motion.div>
 
@@ -34,7 +34,7 @@ const EducationPreview = () => {
                             whileInView={{ y: "100%" }}
                             viewport={{ once: true }}
                             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-                            className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-primary-500 to-transparent"
+                            className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-transparent via-gray-300 dark:via-gray-600 to-transparent"
                         />
                     </div>
 
@@ -58,7 +58,7 @@ const EducationPreview = () => {
                                 <div className={`flex-1 pl-24 md:pl-0 ${index % 2 === 0 ? 'md:pr-20' : 'md:pl-20'}`}>
                                     <div className="group relative">
                                         {/* Hover Glow */}
-                                        <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-10 transition duration-700"></div>
+                                        
 
                                         <div className="relative bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl p-8 md:p-10 rounded-[2.5rem] border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 transition-all duration-500">
                                             <div className="flex flex-wrap items-center justify-between gap-4 mb-6">

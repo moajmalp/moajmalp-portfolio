@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, LogIn } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 import ThemeToggle from '../ThemeToggle';
 
@@ -99,18 +99,6 @@ const Navbar = () => {
           {/* Right Side Actions */}
           <div className="hidden md:flex items-center space-x-4 min-w-[140px] justify-end">
             <ThemeToggle />
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link
-                href="/login"
-                className="inline-flex items-center px-5 py-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-full hover:from-primary-700 hover:to-primary-800 transition-all shadow-lg hover:shadow-primary-500/25 font-semibold text-sm"
-              >
-                <LogIn className="w-4 h-4 mr-2" />
-                Login
-              </Link>
-            </motion.div>
           </div>
 
           {/* Mobile Actions */}
@@ -150,15 +138,6 @@ const Navbar = () => {
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-4 border-t border-gray-100 dark:border-gray-800">
-                <Link
-                  href="/login"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block w-full px-4 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-lg hover:from-primary-700 hover:to-primary-800 transition-all font-semibold text-center shadow-md"
-                >
-                  Login
-                </Link>
-              </div>
             </div>
           </motion.div>
         )}

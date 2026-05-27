@@ -44,28 +44,13 @@ export default function Projects() {
                             </div>
 
                             {/* Content */}
-                            <div className="relative p-8 flex flex-col flex-1">
+                            <div className="relative p-6 flex flex-col gap-4 flex-1 justify-between">
                                 {/* Decorative Gradient line */}
                                 <div className="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gray-200 dark:via-gray-700 to-transparent group-hover:via-primary-500/50 transition-colors duration-500"></div>
 
-                                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                                <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors text-center">
                                     {project.title}
                                 </h3>
-                                <p className="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3 leading-relaxed flex-1">
-                                    {project.description}
-                                </p>
-
-                                {/* Tags */}
-                                <div className="flex flex-wrap gap-2 mb-8 mt-auto">
-                                    {project.tags.map((tag: string) => (
-                                        <span
-                                            key={tag}
-                                            className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold rounded-lg border border-gray-200 dark:border-gray-700"
-                                        >
-                                            {tag}
-                                        </span>
-                                    ))}
-                                </div>
 
                                 {/* Action Buttons */}
                                 <div className="flex gap-4">
@@ -78,15 +63,17 @@ export default function Projects() {
                                         <span>Live Demo</span>
                                         <ExternalLink className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
                                     </a>
-                                    <a
-                                        href={project.codeUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-xl font-semibold border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm"
-                                    >
-                                        <Github className="w-4 h-4" />
-                                        <span>Code</span>
-                                    </a>
+                                    {project.codeUrl && project.codeUrl !== '#' && project.codeUrl !== '' && (
+                                        <a
+                                            href={project.codeUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="flex-1 flex items-center justify-center gap-2 px-4 py-3 bg-white dark:bg-gray-800 text-gray-700 dark:text-white rounded-xl font-semibold border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors text-sm"
+                                        >
+                                            <Github className="w-4 h-4" />
+                                            <span>Code</span>
+                                        </a>
+                                    )}
                                 </div>
                             </div>
                         </motion.div>

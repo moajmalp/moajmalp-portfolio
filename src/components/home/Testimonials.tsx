@@ -62,7 +62,7 @@ const Testimonials = () => {
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-semibold tracking-wider uppercase text-sm">Success Stories</span>
                     <h2 className="text-2xl md:text-4xl font-bold mt-2 text-gray-900 dark:text-white">
-                        Client <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-purple-600">Testimonials</span>
+                        Client <span>Testimonials</span>
                     </h2>
                 </motion.div>
 
@@ -93,7 +93,7 @@ const Testimonials = () => {
                             className="absolute w-full px-4"
                         >
                             <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700 relative mx-auto max-w-3xl">
-                                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gradient-to-r from-primary-500 to-purple-500 p-3 rounded-full shadow-lg">
+                                <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gray-100 dark:bg-gray-800 p-3 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
                                     <Quote className="w-6 h-6 text-white text-center" />
                                 </div>
 
@@ -104,7 +104,7 @@ const Testimonials = () => {
 
                                     <div className="flex items-center gap-4">
                                         {/* Avatar with gradient border */}
-                                        <div className="p-0.5 bg-gradient-to-br from-primary-500 to-purple-500 rounded-full">
+                                        <div className="p-0.5 bg-gray-200 dark:bg-gray-700 rounded-full">
                                             <img
                                                 src={currentTestimonial.avatar}
                                                 alt={currentTestimonial.name}

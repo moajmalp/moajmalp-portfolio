@@ -16,8 +16,8 @@ export default function Contact() {
     ];
 
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-slate-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <PageHeader
                     subtitle="GET IN TOUCH"
                     title={profileData.contact.title}
@@ -35,7 +35,7 @@ export default function Contact() {
                     transition={{ duration: 0.6, delay: 0.3 }}
                     className="mt-16"
                 >
-                    <h3 className="text-2xl font-semibold text-white text-center mb-8">
+                    <h3 className="text-2xl font-semibold text-gray-900 dark:text-white text-center mb-8">
                         Connect With Me
                     </h3>
                     <div className="flex justify-center gap-6">
@@ -53,7 +53,7 @@ export default function Contact() {
                                     transition={{ delay: 0.4 + index * 0.1 }}
                                     whileHover={{ scale: 1.2, y: -5, rotate: 5 }}
                                     whileTap={{ scale: 0.9 }}
-                                    className={`w-14 h-14 backdrop-blur-xl bg-white/10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition-all ${social.color} text-white`}
+                                    className={`w-14 h-14 bg-white dark:bg-gray-900 rounded-full flex items-center justify-center border border-gray-200 dark:border-gray-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 shadow-md transition-all ${social.color} text-gray-700 dark:text-white`}
                                     aria-label={social.label}
                                 >
                                     <Icon className="w-6 h-6" />
@@ -63,6 +63,6 @@ export default function Contact() {
                     </div>
                 </motion.div>
             </div>
-        </section>
+        </div>
     );
 }
