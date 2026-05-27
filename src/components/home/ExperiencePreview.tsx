@@ -26,7 +26,7 @@ const ExperiencePreview = () => {
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Professional Journey</span>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-                        Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Experience</span>
+                        Work <span>Experience</span>
                     </h2>
                 </motion.div>
 
@@ -41,7 +41,7 @@ const ExperiencePreview = () => {
                             className="group relative"
                         >
                             {/* Hover Glow */}
-                            <div className="absolute -inset-1 bg-gradient-to-r from-primary-500 to-purple-500 rounded-[2.5rem] blur-xl opacity-0 group-hover:opacity-10 transition duration-700"></div>
+                            
 
                             <div className="relative h-full bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl p-10 rounded-[2.5rem] border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 transition-all duration-500 flex flex-col">
                                 <div className="absolute top-8 right-8 p-4 opacity-[0.03] group-hover:opacity-10 transition-opacity duration-500 pointer-events-none">

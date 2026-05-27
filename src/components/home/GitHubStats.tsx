@@ -38,7 +38,7 @@ const GitHubStats = () => {
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-3 block">Open Source Ecosystem</span>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-                        GitHub & <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-600">Contributions</span>
+                        GitHub & <span>Contributions</span>
                     </h2>
                 </motion.div>
 
@@ -116,7 +116,7 @@ const GitHubStats = () => {
 
                     <div className="mt-12 flex justify-center">
                         <Link href="https://github.com/moajmalp" target="_blank" className="relative group">
-                            <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 rounded-full blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                            
                             <motion.button
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.98 }}

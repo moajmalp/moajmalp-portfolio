@@ -43,7 +43,7 @@ const WorkPhilosophy = () => {
                 >
                     <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Our Approach</span>
                     <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-                        My Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Philosophy</span>
+                        My Work <span>Philosophy</span>
                     </h2>
                 </motion.div>
 

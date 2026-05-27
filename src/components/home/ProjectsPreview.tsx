@@ -2,12 +2,11 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, ExternalLink, Github, Sparkles } from 'lucide-react';
+import { ArrowRight, ExternalLink, Sparkles } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 
 const ProjectsPreview = () => {
     const projects = profileData.projects || [];
-    const previewProjects = projects.slice(0, 3);
 
     return (
         <section className="py-24 bg-white dark:bg-[#050505] relative overflow-hidden border-t border-gray-100 dark:border-white/5">
@@ -30,7 +29,7 @@ const ProjectsPreview = () => {
                             Portfolio
                         </span>
                         <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight leading-tight">
-                            Featured <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">Projects</span>
+                            Featured <span>Projects</span>
                         </h2>
                         <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base font-medium leading-relaxed">
                             A curated selection of my most impactful work, from scalable web platforms to immersive digital experiences.
@@ -54,18 +53,18 @@ const ProjectsPreview = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
-                    {previewProjects.map((project: any, index: number) => (
+                <div className="flex gap-8 overflow-x-auto pb-12 snap-x snap-mandatory scrollbar-none scroll-smooth">
+                    {projects.map((project: any, index: number) => (
                         <motion.div
                             key={project.id}
                             initial={{ opacity: 0, y: 40 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
-                            className="group relative h-full"
+                            className="group relative shrink-0 w-[85vw] sm:w-[450px] md:w-[380px] snap-center h-auto"
                         >
                             {/* Hover Shadow Glow */}
-                            <div className="absolute -inset-2 bg-gradient-to-r from-primary-500/20 to-purple-500/20 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition duration-700"></div>
+                            
 
                             <div className="relative h-full bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl rounded-[2.5rem] border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 overflow-hidden transition-all duration-500 flex flex-col">
                                 {/* Image Container */}
@@ -86,14 +85,6 @@ const ProjectsPreview = () => {
                                             className="p-4 bg-white text-gray-900 rounded-full hover:scale-110 active:scale-90 transition-transform shadow-2xl"
                                         >
                                             <ExternalLink className="w-6 h-6" />
-                                        </a>
-                                        <a
-                                            href={project.codeUrl}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="p-4 bg-gray-900 text-white rounded-full hover:scale-110 active:scale-90 transition-transform shadow-2xl"
-                                        >
-                                            <Github className="w-6 h-6" />
                                         </a>
                                     </div>
 

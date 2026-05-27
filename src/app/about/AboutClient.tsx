@@ -63,8 +63,8 @@ export default function About() {
     ];
 
     return (
-        <section className="min-h-screen py-20 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 pt-32">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="pt-24 pb-16 min-h-screen bg-gray-50 dark:bg-slate-900">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <PageHeader
                     subtitle="ABOUT US"
                     title="About Me"
@@ -73,7 +73,7 @@ export default function About() {
                 />
 
                 {/* Main Content - Photo & Details */}
-                <div className="grid md:grid-cols-2 gap-12 mb-20">
+                <div className="grid md:grid-cols-2 gap-12 mb-20 mt-12">
                     {/* Photo/Avatar */}
                     <motion.div
                         initial={{ opacity: 0, x: -50 }}
@@ -82,10 +82,10 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                         className="relative"
                     >
-                        <div className="relative w-full h-96 rounded-2xl overflow-hidden backdrop-blur-xl bg-white/10 border border-white/10 shadow-2xl">
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary-500/20 to-purple-500/20"></div>
+                        <div className="relative w-full h-96 rounded-3xl overflow-hidden bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 shadow-xl flex items-center justify-center">
+                            <div className="absolute inset-0 bg-gradient-to-br from-primary-500/5 to-purple-500/5"></div>
                             <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="text-8xl font-bold text-white/20">
+                                <div className="text-8xl font-black text-primary-500/10 dark:text-white/10">
                                     {profileData.personal.name.split(' ').map(n => n[0]).join('')}
                                 </div>
                             </div>
@@ -100,7 +100,7 @@ export default function About() {
                                     repeatDelay: 2,
                                     ease: 'easeInOut',
                                 }}
-                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+                                className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent"
                                 style={{ transform: 'skewX(-20deg)' }}
                             />
                         </div>
@@ -114,19 +114,19 @@ export default function About() {
                         transition={{ duration: 0.6 }}
                         className="space-y-6"
                     >
-                        <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-8 border border-white/10 shadow-2xl">
-                            <h2 className="text-3xl font-bold text-white mb-4">
+                        <div className="bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-200 dark:border-gray-800 shadow-xl">
+                            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
                                 I AM AVAILABLE FOR{' '}
-                                <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">
+                                <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">
                                     UI/UX DESIGN PROJECT
                                 </span>
                             </h2>
-                            <p className="text-gray-300 leading-relaxed mb-6">
+                            <p className="text-gray-600 dark:text-gray-400 leading-relaxed mb-6 font-medium">
                                 {profileData.biography}
                             </p>
-                            <div className="flex items-center gap-2 p-4 backdrop-blur-xl bg-primary-500/20 rounded-xl border border-primary-400/30">
-                                <MapPin className="w-5 h-5 text-primary-400" />
-                                <span className="text-white font-medium">
+                            <div className="flex items-center gap-2 p-4 bg-primary-500/5 dark:bg-primary-500/10 rounded-xl border border-primary-500/10 dark:border-primary-400/20">
+                                <MapPin className="w-5 h-5 text-primary-500 dark:text-primary-400" />
+                                <span className="text-gray-800 dark:text-white font-semibold">
                                     <strong>Location:</strong> {profileData.personal.location}
                                 </span>
                             </div>
@@ -141,9 +141,9 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-4xl font-bold text-white text-center mb-12"
+                        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12"
                     >
-                        Key <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Strengths</span>
+                        Key <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">Strengths</span>
                     </motion.h2>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {features.map((feature, index) => (
@@ -152,7 +152,6 @@ export default function About() {
                                 icon={feature.icon}
                                 title={feature.title}
                                 description={feature.description}
-                                gradient={feature.gradient}
                                 iconColor={feature.iconColor}
                                 index={index}
                             />
@@ -167,9 +166,9 @@ export default function About() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
-                        className="text-3xl md:text-4xl font-bold text-white text-center mb-12"
+                        className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white text-center mb-12"
                     >
-                        My <span className="bg-gradient-to-r from-primary-400 to-primary-600 bg-clip-text text-transparent">Journey</span>
+                        My <span className="bg-gradient-to-r from-primary-500 to-primary-600 bg-clip-text text-transparent">Journey</span>
                     </motion.h2>
                     <div className="max-w-3xl mx-auto">
                         {journey.map((item, index) => (
@@ -185,6 +184,6 @@ export default function About() {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     );
 }

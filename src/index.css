@@ -104,3 +104,90 @@
     page-break-inside: avoid;
   }
 }
+
+/* ==========================================================================
+   HANDCRAFTED PREMIUM DESIGN SYSTEM TOKENS (NON-AI ESTHETICS)
+   ========================================================================== */
+
+/* Fine Blueprint Architectural Coordinate Grid */
+.blueprint-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.light .blueprint-grid {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(14, 165, 233, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14, 165, 233, 0.04) 1px, transparent 1px);
+}
+
+/* Asymmetric Designer Card Frame - Bypasses standard generic rounded card trope */
+.asymmetric-card {
+  border-radius: 2.5rem 0.5rem 2.5rem 0.5rem;
+  box-shadow: 
+    0px 10px 30px rgba(0, 0, 0, 0.04), 
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+.light .asymmetric-card {
+  box-shadow: 
+    0px 10px 30px rgba(14, 165, 233, 0.03), 
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Handcrafted double-outline detail for premium framing */
+.detailed-outline {
+  outline: 1px solid rgba(255, 255, 255, 0.08);
+  outline-offset: 4px;
+}
+
+.light .detailed-outline {
+  outline: 1px solid rgba(14, 165, 233, 0.1);
+  outline-offset: 4px;
+}
+
+/* Paper-thin custom scrollbar in rich gold/purple shifting highlights */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #3b82f6, #8b5cf6, #ec4899);
+  border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #60a5fa, #a78bfa, #f472b6);
+}
+
+/* Selection Highlight customization */
+::selection {
+  background-color: rgba(139, 92, 246, 0.3);
+  color: #ffffff;
+}
+
+.light ::selection {
+  background-color: rgba(14, 165, 233, 0.15);
+  color: #0c4a6e;
+}
+
+/* Hide scrollbar utility */
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+}
+.scrollbar-none {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
