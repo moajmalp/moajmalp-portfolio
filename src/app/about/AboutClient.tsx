@@ -90,19 +90,7 @@ export default function About() {
                                 </div>
                             </div>
                             {/* Shine Effect */}
-                            <motion.div
-                                initial={{ skewX: -20 }}
-                                animate={{
-                                    x: ['-100%', '200%'],
-                                }}
-                                transition={{
-                                    duration: 3,
-                                    repeat: Infinity,
-                                    repeatDelay: 2,
-                                    ease: 'easeInOut',
-                                }}
-                                className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent"
-                            />
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent animate-shine" />
                         </div>
                     </motion.div>
 

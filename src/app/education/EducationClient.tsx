@@ -48,19 +48,7 @@ export default function Education() {
                                     className="flex-1 bg-white dark:bg-gray-900 rounded-3xl p-6 border border-gray-200 dark:border-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 group relative overflow-hidden"
                                 >
                                     {/* Shine Effect */}
-                                    <motion.div
-                                        initial={{ skewX: -20 }}
-                                        animate={{
-                                            x: ['-100%', '200%'],
-                                        }}
-                                        transition={{
-                                            duration: 3,
-                                            repeat: Infinity,
-                                            repeatDelay: 2,
-                                            ease: 'easeInOut',
-                                        }}
-                                        className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent"
-                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary-500/5 to-transparent animate-shine" />
 
                                     {/* Logo Placeholder */}
                                     <div className="flex items-start gap-4 mb-4">

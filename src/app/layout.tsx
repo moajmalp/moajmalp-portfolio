@@ -16,6 +16,9 @@ export const metadata: Metadata = {
     keywords: ["Full Stack Developer", "Muhammed Ajmal P", "Portfolio", "React", "Next.js", "Web Development"],
     authors: [{ name: "Muhammed Ajmal P" }],
     robots: "index, follow",
+    icons: {
+        icon: "/vite.svg",
+    },
 };
 
 export default function RootLayout({
