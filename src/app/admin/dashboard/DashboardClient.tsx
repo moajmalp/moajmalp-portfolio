@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { CheckCircle2, Info, AlertTriangle, X, Terminal, LogOut } from 'lucide-react';
 
 import Sidebar, { TabType } from '../../../components/admin/Sidebar';
 import LeadsTab, { Lead } from '../../../components/admin/LeadsTab';
@@ -137,7 +136,6 @@ export default function DashboardClient() {
                     <div className="flex flex-wrap items-center justify-between gap-4 border-b border-gray-200/50 dark:border-white/5 pb-5">
                         <div className="text-left">
                             <span className="text-[10px] font-black uppercase tracking-widest text-primary-500 flex items-center gap-1.5 mb-1">
-                                <Terminal className="w-3.5 h-3.5" />
                                 Administrator Control
                             </span>
                             <h2 className="text-2xl sm:text-3xl font-black tracking-tight text-gray-950 dark:text-white capitalize">
@@ -166,8 +164,8 @@ export default function DashboardClient() {
                             exit={{ scale: 0.95, opacity: 0, y: 10 }}
                             className="bg-white dark:bg-[#0c0c0c] border border-gray-200/50 dark:border-white/5 rounded-3xl p-6 sm:p-8 max-w-md w-full shadow-2xl text-center"
                         >
-                            <div className="w-14 h-14 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                                <LogOut className="w-7 h-7" />
+                            <div className="w-14 h-14 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-black">
+                                ←
                             </div>
                             <h3 className="text-lg sm:text-xl font-black text-gray-900 dark:text-white mb-2">
                                 Confirm Logout
@@ -209,28 +207,19 @@ export default function DashboardClient() {
                             className="pointer-events-auto flex items-center justify-between gap-3 bg-white/95 dark:bg-[#0f0f0f]/95 backdrop-blur-xl border border-gray-250/25 dark:border-white/10 p-4 rounded-2xl shadow-2xl filter drop-shadow-lg text-left"
                         >
                             <div className="flex items-center gap-3">
-                                {toast.type === 'success' ? (
-                                    <div className="w-8 h-8 rounded-full bg-green-500/15 text-green-500 flex items-center justify-center flex-shrink-0">
-                                        <CheckCircle2 className="w-4 h-4" />
-                                    </div>
-                                ) : toast.type === 'info' ? (
-                                    <div className="w-8 h-8 rounded-full bg-blue-500/15 text-blue-500 flex items-center justify-center flex-shrink-0">
-                                        <Info className="w-4 h-4" />
-                                    </div>
-                                ) : (
-                                    <div className="w-8 h-8 rounded-full bg-red-500/15 text-red-500 flex items-center justify-center flex-shrink-0">
-                                        <AlertTriangle className="w-4 h-4" />
-                                    </div>
-                                )}
+                                <div className={`w-2 h-2 rounded-full flex-shrink-0 ${
+                                    toast.type === 'success' ? 'bg-green-500' :
+                                    toast.type === 'info' ? 'bg-blue-500' : 'bg-red-500'
+                                }`} />
                                 <span className="text-xs font-bold text-gray-800 dark:text-zinc-200">
                                     {toast.text}
                                 </span>
                             </div>
                             <button
                                 onClick={() => handleRemoveToast(toast.id)}
-                                className="p-1 rounded-md text-gray-400 hover:text-gray-950 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5 transition-colors focus:outline-none"
+                                className="p-1 rounded-md text-gray-400 hover:text-gray-950 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5 transition-colors focus:outline-none text-xs font-black"
                             >
-                                <X className="w-4 h-4" />
+                                ✕
                             </button>
                         </motion.div>
                     ))}

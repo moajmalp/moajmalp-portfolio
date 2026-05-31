@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Inbox, Layers, BookOpen, MessageSquare, LogOut, Menu, X, User } from 'lucide-react';
 import ThemeToggle from '../ThemeToggle';
 import { profileData } from '../../data/profileData';
 
@@ -19,10 +18,10 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
     const [isMobileOpen, setIsMobileOpen] = useState(false);
 
     const menuItems = [
-        { id: 'leads' as TabType, label: 'Leads Inbox', icon: Inbox, badge: unreadCount > 0 ? unreadCount : undefined },
-        { id: 'projects' as TabType, label: 'Projects', icon: Layers },
-        { id: 'blogs' as TabType, label: 'Blog Posts', icon: BookOpen },
-        { id: 'testimonials' as TabType, label: 'Testimonials', icon: MessageSquare },
+        { id: 'leads' as TabType, label: 'Leads Inbox', badge: unreadCount > 0 ? unreadCount : undefined },
+        { id: 'projects' as TabType, label: 'Projects' },
+        { id: 'blogs' as TabType, label: 'Blog Posts' },
+        { id: 'testimonials' as TabType, label: 'Testimonials' },
     ];
 
     const handleTabClick = (tabId: TabType) => {
@@ -49,8 +48,8 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
 
                 {/* Profile Card */}
                 <div className="flex items-center gap-3 p-3 bg-gray-100/50 dark:bg-white/5 border border-gray-200/20 dark:border-white/5 rounded-2xl mb-8">
-                    <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center border border-primary-500/20 text-primary-500 flex-shrink-0">
-                        <User className="w-5 h-5" />
+                    <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center border border-primary-500/20 text-primary-500 flex-shrink-0 font-black text-sm">
+                        {profileData.personal.shortName?.charAt(0) ?? 'A'}
                     </div>
                     <div className="min-w-0 text-left">
                         <p className="text-xs font-black text-gray-800 dark:text-white truncate">
@@ -65,7 +64,6 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                 {/* Sidebar Menu Items */}
                 <nav className="flex-1 space-y-1.5 text-left">
                     {menuItems.map((item) => {
-                        const Icon = item.icon;
                         const isActive = activeTab === item.id;
                         return (
                             <button
@@ -84,10 +82,7 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                                     />
                                 )}
-                                <div className="flex items-center gap-3 relative z-10">
-                                    <Icon className="w-4 h-4" />
-                                    <span>{item.label}</span>
-                                </div>
+                                <span className="relative z-10">{item.label}</span>
                                 {item.badge !== undefined && (
                                     <span className="relative z-10 px-2 py-0.5 rounded-full text-[10px] font-black bg-primary-500 text-slate-950 shadow-sm animate-pulse">
                                         {item.badge}
@@ -104,7 +99,6 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                         onClick={onLogout}
                         className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-extrabold text-sm text-red-500 hover:bg-red-500/5 transition-all focus:outline-none"
                     >
-                        <LogOut className="w-4 h-4" />
                         <span>Logout</span>
                     </button>
                 </div>
@@ -124,10 +118,10 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                     <ThemeToggle />
                     <button
                         onClick={() => setIsMobileOpen(true)}
-                        className="p-2 rounded-lg text-gray-500 dark:text-zinc-400 hover:text-gray-950 dark:hover:text-white"
+                        className="px-3 py-1.5 rounded-lg text-xs font-black text-gray-500 dark:text-zinc-400 hover:text-gray-950 dark:hover:text-white border border-gray-200/50 dark:border-white/10"
                         aria-label="Open sidebar"
                     >
-                        <Menu className="w-6 h-6" />
+                        Menu
                     </button>
                 </div>
             </header>
@@ -165,17 +159,17 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                                     </div>
                                     <button
                                         onClick={() => setIsMobileOpen(false)}
-                                        className="p-2 rounded-lg text-gray-500 dark:text-zinc-400"
+                                        className="px-2.5 py-1 rounded-lg text-xs font-black text-gray-500 dark:text-zinc-400 hover:bg-gray-100 dark:hover:bg-white/5"
                                         aria-label="Close sidebar"
                                     >
-                                        <X className="w-5 h-5" />
+                                        ✕
                                     </button>
                                 </div>
 
                                 {/* Profile info */}
                                 <div className="flex items-center gap-3 p-3 bg-gray-100 dark:bg-white/5 border border-gray-200/20 dark:border-white/5 rounded-2xl mb-8">
-                                    <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500 flex-shrink-0">
-                                        <User className="w-5 h-5" />
+                                    <div className="w-10 h-10 rounded-full bg-primary-500/10 flex items-center justify-center text-primary-500 flex-shrink-0 font-black text-sm">
+                                        {profileData.personal.name?.charAt(0) ?? 'A'}
                                     </div>
                                     <div className="min-w-0 text-left">
                                         <p className="text-xs font-black text-gray-800 dark:text-white truncate">
@@ -190,7 +184,6 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                                 {/* Menu Items */}
                                 <nav className="space-y-1.5 text-left">
                                     {menuItems.map((item) => {
-                                        const Icon = item.icon;
                                         const isActive = activeTab === item.id;
                                         return (
                                             <button
@@ -202,12 +195,9 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                                                         : 'text-gray-500 dark:text-zinc-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-white/5'
                                                 }`}
                                             >
-                                                <div className="flex items-center gap-3">
-                                                    <Icon className="w-4 h-4" />
-                                                    <span>{item.label}</span>
-                                                </div>
+                                                <span>{item.label}</span>
                                                 {item.badge !== undefined && (
-                                                    <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-primary-505 bg-primary-500 text-slate-950 animate-pulse">
+                                                    <span className="px-2 py-0.5 rounded-full text-[10px] font-black bg-primary-500 text-slate-950 animate-pulse">
                                                         {item.badge}
                                                     </span>
                                                 )}
@@ -226,7 +216,6 @@ export default function Sidebar({ activeTab, setActiveTab, onLogout, unreadCount
                                     }}
                                     className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-extrabold text-sm text-red-500 hover:bg-red-500/5 transition-all focus:outline-none"
                                 >
-                                    <LogOut className="w-4 h-4" />
                                     <span>Logout</span>
                                 </button>
                             </div>

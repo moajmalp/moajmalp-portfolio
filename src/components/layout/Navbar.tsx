@@ -43,14 +43,6 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo & Brand */}
-          <Link
-            href="/"
-            className="flex items-center space-x-1 group min-w-[140px]"
-          >
-            <span className="text-2xl font-black text-gray-900 dark:text-white tracking-tight">
-              Ajmal P<span className="text-primary-500 dark:text-primary-400">.</span>
-            </span>
-          </Link>
 
           {/* Desktop Navigation - Centered */}
           <div className="hidden md:flex items-center justify-center flex-1 px-8">
