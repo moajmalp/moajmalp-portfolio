@@ -1,74 +1,104 @@
 "use client";
 
 import { motion } from 'framer-motion';
-import { profileData } from '../../data/profileData';
-import {
-  Code, Layers, Database, Globe,
-  TrendingUp, FileText, Settings,
-  CheckCircle, Lightbulb, Users, Zap
-} from 'lucide-react';
-
-// Create a mapping of icon names string to Lucide components
-const iconMap: Record<string, any> = {
-  Code, Layers, Database, Globe,
-  TrendingUp, FileText, Settings,
-  CheckCircle, Lightbulb, Users, Zap
-};
 
 const TechStackSlider = () => {
-  const techStack = [...profileData.skills.technical];
-
   return (
-    <section className="py-24 bg-white dark:bg-[#050505] relative overflow-hidden border-t border-gray-100 dark:border-white/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        >
-          <span className="text-primary-600 dark:text-primary-400 font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Skills Ecosystem</span>
-          <h2 className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white tracking-tight">
-            Technologies <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-500 via-purple-500 to-pink-500">& Tools</span>
-          </h2>
-        </motion.div>
-      </div>
+    <section className="py-24 bg-white dark:bg-[#050505] relative overflow-hidden border-t border-gray-100 dark:border-white/5 text-gray-900 dark:text-white">
+      {/* Architectural blueprints grid overlay for depth */}
+      <div className="absolute inset-0 blueprint-grid opacity-30 pointer-events-none"></div>
 
-      <div className="relative w-full overflow-hidden py-10">
-        {/* Gradient Masks */}
-        <div className="absolute top-0 left-0 w-32 md:w-64 h-full bg-gradient-to-r from-white dark:from-[#050505] to-transparent z-10 pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-32 md:w-64 h-full bg-gradient-to-l from-white dark:from-[#050505] to-transparent z-10 pointer-events-none"></div>
-
-        <div className="flex w-max">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          
+          {/* Left Column - Content */}
           <motion.div
-            className="flex gap-8 px-4"
-            animate={{
-              x: ["0%", "-50%"]
-            }}
-            transition={{
-              repeat: Infinity,
-              duration: 30,
-              ease: "linear"
-            }}
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
-            {/* Render list enough times for smooth loop */}
-            {[...techStack, ...techStack, ...techStack, ...techStack].map((tech, index) => {
-              const Icon = iconMap[tech.icon] || Code;
-              return (
-                <div
-                  key={`${tech.name}-${index}`}
-                  className="group flex flex-col items-center justify-center p-8 bg-gray-50 dark:bg-white/[0.03] backdrop-blur-xl rounded-[2rem] border border-gray-100 dark:border-white/10 hover:border-primary-500/30 transition-all duration-500 w-36 h-36 md:w-44 md:h-44 shrink-0 shadow-lg shadow-black/5"
-                >
-                  <div className="mb-4 transform group-hover:scale-110 group-hover:rotate-6 transition-transform duration-500 p-4 bg-white dark:bg-white/5 rounded-2xl shadow-sm">
-                    <Icon className="w-8 h-8 md:w-10 md:h-10 text-primary-500" />
-                  </div>
-                  <span className="text-sm font-black text-gray-900 dark:text-white uppercase tracking-widest text-center">
-                    {tech.name}
-                  </span>
-                </div>
-              );
-            })}
+            <span className="text-gray-400 dark:text-gray-500 font-bold tracking-[0.25em] uppercase text-xs mb-3 block">
+              SKILLS
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white mb-8 tracking-tight leading-tight">
+              Technical <span className="text-primary-500 dark:text-primary-400 lowercase">skills.</span>
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed font-medium max-w-xl">
+              Over the years, I have built deep expertise in custom WordPress development, speed optimization, and search engine strategies. I focus on writing high-performance, clean code, scaling custom configurations, and building optimized digital experiences that rank highly on search engines and convert visitors.
+            </p>
           </motion.div>
+
+          {/* Right Column - Visual Staggered Shapes Grid */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            className="flex flex-col gap-6 items-center lg:items-end justify-center w-full"
+          >
+            {/* Row 1 */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap w-full lg:justify-end">
+              {/* Circle - HTML5 */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                HTML5
+              </motion.div>
+              {/* Rounded Box - WordPress */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-36 h-24 sm:w-48 sm:h-28 rounded-2xl border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                WORDPRESS
+              </motion.div>
+              {/* Circle - PHP */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-24 h-24 sm:w-28 sm:h-28 rounded-full border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                PHP
+              </motion.div>
+            </div>
+
+            {/* Row 2 */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap w-full lg:justify-end">
+              {/* Capsule/Pill - SEO */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-36 h-24 sm:w-44 sm:h-28 rounded-full border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                SEO
+              </motion.div>
+              {/* Rounded Box - Content Optimization */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-36 h-24 sm:w-48 sm:h-28 rounded-2xl border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                CONTENT OPT.
+              </motion.div>
+            </div>
+
+            {/* Row 3 */}
+            <div className="flex items-center justify-center gap-4 sm:gap-6 flex-wrap w-full lg:justify-end">
+              {/* Rounded Box - Maintenance */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-36 h-24 sm:w-48 sm:h-28 rounded-2xl border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                MAINTENANCE
+              </motion.div>
+              {/* Capsule/Pill - JavaScript */}
+              <motion.div
+                whileHover={{ scale: 1.05, borderColor: "rgba(56, 189, 248, 0.6)" }}
+                className="w-36 h-24 sm:w-44 sm:h-28 rounded-full border border-primary-500/20 dark:border-primary-500/30 bg-gray-50 dark:bg-zinc-900/60 flex items-center justify-center text-gray-800 dark:text-white font-bold text-xs sm:text-sm tracking-widest text-center shadow-lg transition-colors cursor-default"
+              >
+                JAVASCRIPT
+              </motion.div>
+            </div>
+          </motion.div>
+
         </div>
       </div>
     </section>

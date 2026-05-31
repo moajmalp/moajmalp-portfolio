@@ -281,7 +281,7 @@ export const profileData: ProfileData = {
             title: "Mastering WordPress Performance",
             excerpt: "Learn how to optimize your WordPress site for lightning-fast load times and better SEO rankings.",
             date: "Oct 15, 2024",
-            image: "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=800&q=80",
+            image: "/assets/blog_wordpress_performance.png",
             tags: ["WordPress", "Performance", "SEO"],
             url: "/blog/mastering-wordpress-performance"
         },
@@ -290,7 +290,7 @@ export const profileData: ProfileData = {
             title: "The Future of SEO in 2025",
             excerpt: "Explore the upcoming trends in Search Engine Optimization and how AI is reshaping the landscape.",
             date: "Nov 02, 2024",
-            image: "https://images.unsplash.com/photo-1572435555641-68dbbd68a5c1?w=800&q=80",
+            image: "/assets/blog_seo_future.png",
             tags: ["SEO", "AI", "Trends"],
             url: "/blog/future-of-seo-2025"
         },
@@ -299,7 +299,7 @@ export const profileData: ProfileData = {
             title: "Building Scalable React Apps",
             excerpt: "Best practices for structuring and maintaining large-scale React applications for long-term success.",
             date: "Nov 20, 2024",
-            image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&q=80",
+            image: "/assets/blog_react_scale.png",
             tags: ["React", "Development", "Architecture"],
             url: "/blog/scalable-react-apps"
         }

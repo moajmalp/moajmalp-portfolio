@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     authors: [{ name: "Muhammed Ajmal P" }],
     robots: "index, follow",
     icons: {
-        icon: "/vite.svg",
+        icon: "/assets/logo.png",
     },
 };
 

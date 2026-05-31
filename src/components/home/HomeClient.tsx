@@ -4,17 +4,18 @@ import { useState, useEffect } from 'react';
 import Hero from './Hero';
 import WhatIDo from './WhatIDo';
 import TechStackSlider from './TechStackSlider';
-import Achievements from './Achievements';
+// import Achievements from './Achievements';
 import WhyHireMe from './WhyHireMe';
-import WorkPhilosophy from './WorkPhilosophy';
-import ExperiencePreview from './ExperiencePreview';
-import GitHubStats from './GitHubStats';
-import EducationPreview from './EducationPreview';
+// import WorkPhilosophy from './WorkPhilosophy';
+// import ExperiencePreview from './ExperiencePreview';
+// import GitHubStats from './GitHubStats';
+// import EducationPreview from './EducationPreview';
 import ProjectsPreview from './ProjectsPreview';
-import LearningNow from './LearningNow';
+import AboutMe from './AboutMe';
+// import LearningNow from './LearningNow';
 import BlogPreview from './BlogPreview';
 import Testimonials from './Testimonials';
-import Certifications from './Certifications';
+// import Certifications from './Certifications';
 import FAQ from './FAQ';
 import CallToAction from './CallToAction';
 
@@ -33,6 +34,22 @@ const HomeClient = () => {
         }, 1500);
         return () => clearTimeout(timer);
     }, []);
+
+    useEffect(() => {
+        if (!isLoading) {
+            const hash = window.location.hash;
+            if (hash) {
+                const id = hash.replace('#', '');
+                const scrollTimer = setTimeout(() => {
+                    const element = document.getElementById(id);
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }, 100);
+                return () => clearTimeout(scrollTimer);
+            }
+        }
+    }, [isLoading]);
 
     if (isLoading) {
         return (
@@ -58,17 +75,18 @@ const HomeClient = () => {
         <>
             <Hero />
             <WhatIDo />
-            <TechStackSlider />
-            <Achievements />
-            <WhyHireMe />
-            <WorkPhilosophy />
-            <ExperiencePreview />
-            <GitHubStats />
-            <EducationPreview />
             <ProjectsPreview />
-            <LearningNow />
+            <AboutMe />
+            <TechStackSlider />
+            {/* <Achievements /> */}
+            <WhyHireMe />
+            {/* <WorkPhilosophy /> */}
+            {/* <ExperiencePreview /> */}
+            {/* <GitHubStats /> */}
+            {/* <EducationPreview /> */}
+            {/* <LearningNow /> */}
             <Testimonials />
-            <Certifications />
+            {/* <Certifications /> */}
             <BlogPreview />
             <FAQ />
             <CallToAction />

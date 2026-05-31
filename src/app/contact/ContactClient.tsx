@@ -20,8 +20,8 @@ export default function Contact() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
                 <PageHeader
                     subtitle="GET IN TOUCH"
-                    title={profileData.contact.title}
-                    highlight="Touch"
+                    title="Contact me."
+                    highlight="me."
                     description={profileData.contact.subtitle}
                 />
 

@@ -13,6 +13,19 @@ export async function POST(request: Request) {
             );
         }
 
+        // Fallback for local development or when SMTP credentials are not set
+        if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+            console.log('\n--- DEVELOPMENT CONTACT FORM SUBMISSION ---');
+            console.log(`From: ${name} (${email})`);
+            console.log(`Message: ${message}`);
+            console.log('--------------------------------------------\n');
+            
+            // Artificial delay to simulate network latency
+            await new Promise((resolve) => setTimeout(resolve, 800));
+            
+            return NextResponse.json({ message: 'Logged contact form in development successfully' }, { status: 200 });
+        }
+
         // Configure transport
         const transporter = nodemailer.createTransport({
             service: 'gmail',

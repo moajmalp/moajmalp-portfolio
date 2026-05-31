@@ -1,23 +1,56 @@
 "use client";
 
 import { useState, FormEvent } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
 
 export default function Login() {
+    const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
+    const [loading, setLoading] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
         password: '',
         rememberMe: false
     });
+    const [errors, setErrors] = useState<{
+        email?: string;
+        password?: string;
+    }>({});
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        // Handle login logic here
-        console.log('Login:', formData);
+        
+        const newErrors: typeof errors = {};
+        
+        if (!formData.email.trim()) {
+            newErrors.email = "Please fill in this field.";
+        } else if (!formData.email.includes('@')) {
+            newErrors.email = `Please include an '@' in the email address. '${formData.email}' is missing an '@'.`;
+        }
+        
+        if (!formData.password.trim()) {
+            newErrors.password = "Please fill in this field.";
+        }
+        
+        if (Object.keys(newErrors).length > 0) {
+            setErrors(newErrors);
+            if (newErrors.email) {
+                document.getElementById('email')?.focus();
+            } else if (newErrors.password) {
+                document.getElementById('password')?.focus();
+            }
+            return;
+        }
+
+        setLoading(true);
+        // Simulate a smooth authentication delay
+        setTimeout(() => {
+            router.push('/admin/dashboard');
+        }, 1200);
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +59,9 @@ export default function Login() {
             ...formData,
             [name]: type === 'checkbox' ? checked : value
         });
+        if (errors[name as 'email' | 'password']) {
+            setErrors(prev => ({ ...prev, [name]: undefined }));
+        }
     };
 
     return (
@@ -79,9 +115,9 @@ export default function Login() {
                         <h2 className="text-3xl font-bold text-center text-white mb-2">Welcome Back</h2>
                         <p className="text-center text-white/70 mb-8">Sign in to your account</p>
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
+                        <form onSubmit={handleSubmit} noValidate className="space-y-6">
                             {/* Email Field */}
-                            <div>
+                            <div className="relative">
                                 <label htmlFor="email" className="block text-sm font-medium text-white/90 mb-2">
                                     Email ID
                                 </label>
@@ -96,14 +132,33 @@ export default function Login() {
                                         value={formData.email}
                                         onChange={handleChange}
                                         required
-                                        className="block w-full pl-10 pr-3 py-3 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-white/20 dark:border-gray-600/30 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all"
+                                        className={`block w-full pl-10 pr-3 py-3 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border ${errors.email ? 'border-amber-500 focus:ring-amber-500/50' : 'border-white/20 dark:border-gray-600/30'} rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`}
                                         placeholder="Enter your email"
                                     />
                                 </div>
+                                <AnimatePresence>
+                                    {errors.email && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -6, scale: 0.95 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: -6, scale: 0.95 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="absolute top-[calc(100%+4px)] left-4 z-20 flex flex-col items-start filter drop-shadow-md pointer-events-none select-none"
+                                        >
+                                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-white dark:border-b-gray-800 ml-5" />
+                                            <div className="flex items-center gap-2.5 bg-white dark:bg-gray-800 px-3.5 py-2 rounded-lg border border-gray-250/35 dark:border-white/10 text-gray-900 dark:text-white text-xs font-semibold pointer-events-auto shadow-xl">
+                                                <div className="flex-shrink-0 w-4 h-4 rounded bg-[#f58200] flex items-center justify-center text-white font-black text-[10px]">
+                                                    !
+                                                </div>
+                                                <span className="leading-tight">{errors.email}</span>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
 
                             {/* Password Field */}
-                            <div>
+                            <div className="relative">
                                 <label htmlFor="password" className="block text-sm font-medium text-white/90 mb-2">
                                     Password
                                 </label>
@@ -118,7 +173,7 @@ export default function Login() {
                                         value={formData.password}
                                         onChange={handleChange}
                                         required
-                                        className="block w-full pl-10 pr-12 py-3 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border border-white/20 dark:border-gray-600/30 rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-purple-500/50 focus:border-transparent transition-all"
+                                        className={`block w-full pl-10 pr-12 py-3 bg-white/10 dark:bg-gray-800/20 backdrop-blur-sm border ${errors.password ? 'border-amber-500 focus:ring-amber-500/50' : 'border-white/20 dark:border-gray-600/30'} rounded-xl text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:border-transparent transition-all`}
                                         placeholder="Enter your password"
                                     />
                                     <button
@@ -133,6 +188,25 @@ export default function Login() {
                                         )}
                                     </button>
                                 </div>
+                                <AnimatePresence>
+                                    {errors.password && (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: -6, scale: 0.95 }}
+                                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                                            exit={{ opacity: 0, y: -6, scale: 0.95 }}
+                                            transition={{ duration: 0.15 }}
+                                            className="absolute top-[calc(100%+4px)] left-4 z-20 flex flex-col items-start filter drop-shadow-md pointer-events-none select-none"
+                                        >
+                                            <div className="w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-b-[6px] border-b-white dark:border-b-gray-800 ml-5" />
+                                            <div className="flex items-center gap-2.5 bg-white dark:bg-gray-800 px-3.5 py-2 rounded-lg border border-gray-250/35 dark:border-white/10 text-gray-900 dark:text-white text-xs font-semibold pointer-events-auto shadow-xl">
+                                                <div className="flex-shrink-0 w-4 h-4 rounded bg-[#f58200] flex items-center justify-center text-white font-black text-[10px]">
+                                                    !
+                                                </div>
+                                                <span className="leading-tight">{errors.password}</span>
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
                             </div>
 
                             {/* Remember Me & Forgot Password */}
@@ -158,11 +232,19 @@ export default function Login() {
                             {/* Login Button */}
                             <motion.button
                                 type="submit"
-                                whileHover={{ scale: 1.02 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="w-full py-3 px-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-purple-500/50"
+                                disabled={loading}
+                                whileHover={{ scale: loading ? 1 : 1.02 }}
+                                whileTap={{ scale: loading ? 1 : 0.98 }}
+                                className={`w-full py-3 px-4 bg-gradient-to-r from-purple-600 via-blue-600 to-indigo-600 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all focus:outline-none focus:ring-2 focus:ring-purple-500/50 flex items-center justify-center gap-2 ${loading ? 'opacity-85 cursor-not-allowed' : ''}`}
                             >
-                                LOGIN
+                                {loading ? (
+                                    <>
+                                        <div className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin" />
+                                        SIGNING IN...
+                                    </>
+                                ) : (
+                                    "LOGIN"
+                                )}
                             </motion.button>
 
                             {/* Sign Up Link */}

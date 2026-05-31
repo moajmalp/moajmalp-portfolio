@@ -1,280 +1,131 @@
 # Muhammed Ajmal P - Portfolio Website
 
-A modern, multi-page responsive personal portfolio website built with React, TypeScript, Vite, Tailwind CSS, and React Router. Features premium UI design with glassmorphism effects, smooth page transitions, and comprehensive SEO optimization.
+A state-of-the-art, responsive personal portfolio website built with **Next.js 16 (App Router)**, **TypeScript**, **Tailwind CSS**, and **Framer Motion**. Features premium visual design with custom glassmorphism, dynamic micro-animations, global stateful modals, and high-fidelity SEO optimization.
 
-## 🚀 Features
+---
 
-- **Multi-Page Routing**: React Router with dedicated pages (/, /about, /skills, /experience, /education, /contact, /login)
-- **Premium UI Design**: Glassmorphism effects, modern card layouts, 3D hover effects, animated backgrounds
-- **Page Transitions**: Smooth Framer Motion animations between pages with fade/slide effects
-- **Dark Premium Theme**: Consistent dark theme with gradient accents across all pages
-- **Responsive**: Mobile-first design that works on all devices
-- **SEO Optimized**: react-helmet-async for per-page SEO (meta tags, Open Graph, JSON-LD, canonical URLs)
-- **Animated Landing Page**: Hero section with parallax, floating shapes, tech stack slider, achievements, and more
-- **Premium Pages**: All pages upgraded with consistent premium design:
-  - **About**: Photo section, feature tiles, journey timeline
-  - **Skills**: Linear and circular progress animations
-  - **Experience**: Vertical timeline with sticky year markers, expandable details
-  - **Education**: Step timeline with shine effects
-  - **Contact**: Floating labels, form validation, social links
-- **Reusable Components**: PageHeader, CardFeature, TimelineCard, CircularProgress, ContactForm
-- **Content Management**: Single `profileData.js` file for all content
-- **Accessible**: Semantic HTML and ARIA attributes
-- **Performance Optimized**: Lazy-loaded animations, GPU-accelerated transforms
+## 🚀 Advanced Features
 
-## 📁 Project Structure
+### 💎 Premium Custom Modals & Dialogs
+- **Interactive PDF Resume Viewer**: Triggers when clicking `"View Resume"` on the Navbar or Bio. Implements a gorgeous glassmorphic header, interactive loading animation, dynamic direct download triggers, standard print shortcuts, and a custom **Fullscreen (Open in New Tab)** action for premium mobile responsiveness.
+- **Glassmorphic Download Confirmation**: Triggers when clicking `"Download Resume"` on bottom CTA buttons, prompting with a sleek pulse-animated warning dialog instead of browser-native alert alerts.
+- **Custom Alert Tooltips**: Replaced default browser-native validation popups on all form submissions (Contact & Login) with custom-animated warning tooltips (`!`). They feature arrows pointing directly to the invalid input, soft backdrops, and intelligent validation (e.g., checks for missing `@` in emails) that clears as you correct inputs in real-time.
+
+### 🎨 Visual & Layout Innovations
+- **Global Context Management**: Modals are controlled using a global React Context (`ResumeModalContext.tsx`) and Provider mounted at the layout level in `ClientLayout.tsx` for optimal, lag-free rendering.
+- **Unified Sky Blue & Dark Theme**: Modern dark theme centered around a Charcoal/Gray-900 background, crisp white typography, and vibrant native sky blue (`#38BDF8`) accent borders and animations.
+- **Concentric "About Me" Bio Section**: Features concentric rotating border rings framing a greyscale profile photo (focused headshot zoom effect) detailed with interactive tech stacks (`HTML5`, `JS`, `React`, `CSS3`) that react to cursor hovers.
+- **Horizontal Sliding Showcase Track**: The Featured Projects grid is designed as a smooth snap-scrolling track that handles client proprietary platforms beautifully without needing public repositories.
+- **Global Right-Click Prevention**: Standard browser context menus (Back, Inspect, View Source) are completely disabled globally to protect media assets, matching highly immersive digital agency standards.
+
+### ⚡ Performance & Robustness
+- **Skeleton Hash-Scroll Handler**: A client-side hook solves deep scrolling to page anchors after the skeleton loading transitions complete.
+- **SMTP Local Development Fallback**: If SMTP environment variables are not loaded, the contact form API route (`/api/contact`) prints form details inside the terminal and returns a successful `200` response. This prevents form submission failures in development while remaining fully operational for production email transfers.
+- **GPU CSS Animations**: Restructured heavy Framer Motion keyframe animations into composite CSS shine effects to eliminate CPU lag.
+
+---
+
+## 📁 Project Directory
 
 ```
 portfolio/
 ├── public/
-│   └── assets/
-│       └── Ajmal-p-CV-01.pdf          # CV file (add your CV here)
+│   ├── assets/
+│   │   ├── Ajmal-p-CV-01.pdf          # Resume PDF file
+│   │   ├── kugoriental.png            # Project screenshots
+│   │   ├── g7_website.png
+│   │   ├── klashra.png
+│   │   ├── vsafad.png
+│   │   └── pagenow.png
+│   └── profile.png                    # Profile headshot image
 ├── src/
+│   ├── app/                           # Next.js App Router
+│   │   ├── api/
+│   │   │   └── contact/
+│   │   │       └── route.ts           # SMTP Contact endpoint with local fallback
+│   │   ├── blog/                      # Static blog pages
+│   │   ├── contact/                   # Rebuilt minimal contact page
+│   │   ├── projects/                  # Dynamic projects showcase grid
+│   │   ├── login/                     # Admin login page with custom tooltips
+│   │   ├── layout.tsx                 # App Root Layout & SEO Meta
+│   │   └── page.tsx                   # Main entry point
 │   ├── components/
 │   │   ├── common/
-│   │   │   ├── PageHeader.tsx         # Reusable page headers
-│   │   │   ├── CardFeature.tsx        # Feature cards with 3D effects
-│   │   │   ├── TimelineCard.tsx       # Timeline entry component
-│   │   │   ├── CircularProgress.tsx   # Circular progress bars
-│   │   │   └── ContactForm.tsx        # Contact form with validation
+│   │   │   ├── ContactForm.tsx        # Contact form with custom tooltips
+│   │   │   ├── CustomCursor.tsx       # Interactive premium torch follower
+│   │   │   └── CardFeature.tsx        # Modern project cards
 │   │   ├── home/
-│   │   │   ├── Hero.tsx               # Premium hero section
-│   │   │   ├── WhatIDo.tsx            # Services section
-│   │   │   ├── TechStackSlider.tsx    # Auto-play tech stack
-│   │   │   ├── Achievements.tsx       # Animated counters
-│   │   │   ├── WhyHireMe.tsx          # Strengths section
-│   │   │   └── CallToAction.tsx       # CTA section
+│   │   │   ├── Hero.tsx               # Centered code-IDE background hero
+│   │   │   ├── AboutMe.tsx            # Concentric rotating photo biography
+│   │   │   ├── WhatIDo.tsx            # Capability grid
+│   │   │   ├── ProjectsPreview.tsx    # Horizontal snapping projects slider
+│   │   │   └── CallToAction.tsx       # Bottom CTA button
 │   │   ├── layout/
-│   │   │   ├── Navbar.tsx             # Premium glassmorphism navbar
-│   │   │   └── PageTransition.tsx     # Page transition wrapper
-│   │   ├── __tests__/                 # Unit tests
-│   │   ├── Footer.tsx                 # Footer component
-│   │   └── ThemeToggle.tsx            # Dark/light theme toggle
-│   ├── pages/
-│   │   ├── Home.tsx                   # Premium animated landing page (/)
-│   │   ├── About.tsx                  # About with timeline (/about)
-│   │   ├── Skills.tsx                 # Skills with progress bars (/skills)
-│   │   ├── Experience.tsx            # Timeline with sticky markers (/experience)
-│   │   ├── Education.tsx              # Step timeline (/education)
-│   │   ├── Contact.tsx                # Contact with validation (/contact)
-│   │   └── Login.tsx                  # Premium login page (/login)
+│   │   │   ├── Navbar.tsx             # Centered dynamic white-label navbar
+│   │   │   └── ClientLayout.tsx       # Providers wrapper & right-click prevention
+│   │   └── ThemeToggle.tsx            # Light/Dark mode toggler
+│   ├── context/
+│   │   └── ResumeModalContext.tsx     # Global Modal Context (PDF Viewer & Download Confirm)
 │   ├── data/
-│   │   └── profileData.js             # All profile content (single source)
+│   │   └── profileData.ts             # Static site content (Single Source of Truth)
 │   ├── utils/
-│   │   └── theme.ts                   # Theme management utilities
-│   ├── test/
-│   │   └── setup.ts                   # Jest test setup
-│   ├── App.tsx                        # Main app with routing
-│   ├── main.tsx                       # React entry point
-│   └── index.css                      # Global styles & transitions
-├── index.html
-├── package.json
-├── tsconfig.json
+│   │   └── theme.ts                   # LocalStorage Theme sync
+│   └── index.css                      # Tailwind core directives & hardware animations
 ├── tailwind.config.js
-├── vite.config.ts
-├── jest.config.js
-└── README.md
+├── next.config.js
+├── tsconfig.json
+└── package.json
 ```
+
+---
 
 ## 🛠️ Local Development
 
-### Prerequisites
+### Installation & Run
 
-- Node.js 18+ and npm/yarn/pnpm
-
-### Installation
-
-1. **Clone the repository** (or navigate to the project directory)
-
-2. **Install dependencies**:
+1. **Install dependencies**:
    ```bash
    npm install
    ```
 
-3. **Add your CV file**:
-   - Place your CV PDF file at `public/assets/Ajmal-p-CV-01.pdf`
-   - If your CV is located elsewhere (e.g., `/mnt/data/Ajmal p CV 01.pdf`), copy it to `public/assets/Ajmal-p-CV-01.pdf`
-   - Or update the `cvPath` in `src/data/profile-content.json` to match your file location
-   - The CV download button will work once the file is in place
+2. **Verify static assets**:
+   - Ensure the resume is present at `public/assets/Ajmal-p-CV-01.pdf`.
+   - Verify the profile headshot is present at `public/profile.png`.
 
-4. **Start the development server**:
+3. **Start the local dev server**:
    ```bash
    npm run dev
    ```
+   *The application will boot up at `http://localhost:3000`.*
 
-5. **Open your browser**:
-   - The app will automatically open at `http://localhost:3000`
+### Build Optimization
 
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm test` - Run unit tests
-- `npm run test:watch` - Run tests in watch mode
-
-## 📝 Updating Content
-
-All text content is stored in `src/data/profileData.js`. Simply edit this file to update:
-
-- Personal information
-- Biography text
-- Hero section (headline, subtitle, CTAs)
-- Skills and languages (with proficiency levels)
-- Experience entries
-- Education entries
-- Contact information
-- SEO metadata
-
-No need to modify component files for content changes!
-
-### Routes
-
-- `/` - Home page with hero section
-- `/about` - About page with biography
-- `/skills` - Skills & Languages page with proficiency indicators
-- `/experience` - Experience timeline page
-- `/education` - Education cards page
-- `/contact` - Contact form page
-
-## 🚀 Deployment to Vercel
-
-### Step 1: Prepare Your Project
-
-1. **Ensure your CV file is in place**:
-   - Add your CV PDF to `public/assets/Ajmal-p-CV-01.pdf`
-   - Or update the path in `profile-content.json`
-
-2. **Update environment-specific content** (if needed):
-   - Update URLs in `index.html` (Open Graph, Twitter cards)
-   - Update structured data in `index.html`
-
-### Step 2: Deploy to Vercel
-
-#### Option A: Using Vercel CLI
-
-1. **Install Vercel CLI** (if not already installed):
-   ```bash
-   npm i -g vercel
-   ```
-
-2. **Login to Vercel**:
-   ```bash
-   vercel login
-   ```
-
-3. **Deploy**:
-   ```bash
-   vercel
-   ```
-
-4. **Follow the prompts**:
-   - Link to existing project or create new
-   - Confirm project settings
-   - Deploy!
-
-#### Option B: Using GitHub Integration
-
-1. **Push your code to GitHub**:
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin <your-github-repo-url>
-   git push -u origin main
-   ```
-
-2. **Import to Vercel**:
-   - Go to [vercel.com](https://vercel.com)
-   - Click "Add New Project"
-   - Import your GitHub repository
-   - Vercel will auto-detect Vite settings
-   - Click "Deploy"
-
-### Step 3: Configure Build Settings
-
-Vercel should auto-detect these settings, but verify:
-
-- **Framework Preset**: Vite
-- **Build Command**: `npm run build`
-- **Output Directory**: `dist`
-- **Install Command**: `npm install`
-
-### Step 4: Environment Variables
-
-No environment variables are required for basic deployment. If you add a contact form backend later, add your API endpoints here.
-
-### Step 5: Custom Domain (Optional)
-
-1. Go to your project settings in Vercel
-2. Navigate to "Domains"
-3. Add your custom domain
-4. Follow DNS configuration instructions
-
-## 📄 Serving the CV File
-
-The CV file is served from the `public` directory, which Vercel automatically serves as static assets.
-
-**Important Notes**:
-- The CV file path in `profile-content.json` should be relative to the `public` directory
-- Example: If your CV is at `public/assets/cv.pdf`, use `/assets/cv.pdf` in the JSON
-- Vercel will serve files from `public/` at the root URL
-- Ensure the file exists before deploying
-
-## 🧪 Testing
-
-Run the test suite:
-
+To compile and bundle for strict production check:
 ```bash
-npm test
+npm run build
 ```
-
-Watch mode:
-
-```bash
-npm run test:watch
-```
-
-## 🎨 Customization
-
-### Colors
-
-Edit `tailwind.config.js` to customize the color scheme:
-
-```js
-colors: {
-  primary: {
-    // Your custom colors
-  }
-}
-```
-
-### Animations
-
-Animations use Framer Motion. Customize in component files or add new animations in `tailwind.config.js`.
-
-### Layout
-
-All components are modular. Edit individual component files in `src/components/` to customize layouts.
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## 📄 License
-
-This project is private and proprietary.
-
-## 👤 Author
-
-**Muhammed Ajmal P**
-- Email: hi@moajmalp.in
-- Location: Malappuram, Kerala
 
 ---
 
-Built with ❤️ using React, TypeScript, Vite, and Tailwind CSS
+## 📝 Updating Website Content
+
+All content across the website is unified under `src/data/profileData.ts`. Editing this file updates:
+- Personal Bio & Titles
+- Tech capabilities list
+- Highlighted developed projects (Titles, Tags, Live Links)
+- Certifications, Testimonials, and SEO Meta descriptors
+
+---
+
+## 🚀 Vercel Production Deployment
+
+### Setup Env Variables
+To enable Nodemailer SMTP email forwarding in production, add the following environment variables inside your Vercel/Hosting Dashboard:
+
+- `EMAIL_USER` - The sending Gmail account address.
+- `EMAIL_PASS` - Gmail App Password (generated via Google Account settings).
+- `EMAIL_TO` - Destination email where submission details are delivered.
+
+---
+
+Built with ❤️ using Next.js, React, TypeScript, and Tailwind CSS

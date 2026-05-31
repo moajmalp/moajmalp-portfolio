@@ -2,17 +2,10 @@
 
 import { motion } from 'framer-motion';
 import { Download, Mail, ArrowRight } from 'lucide-react';
-import { profileData } from '../../data/profileData';
+import { useResumeModal } from '../../context/ResumeModalContext';
 
 const CallToAction = () => {
-  const handleDownloadCV = () => {
-    const link = document.createElement('a');
-    link.href = profileData.personal.cvPath;
-    link.download = 'Muhammed-Ajmal-P-CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  const { openDownloadConfirm } = useResumeModal();
 
   const scrollToContact = () => {
     const element = document.getElementById('contact-section');
@@ -71,7 +64,7 @@ const CallToAction = () => {
             <motion.button
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={handleDownloadCV}
+              onClick={openDownloadConfirm}
               className="inline-flex items-center justify-center px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 hover:bg-gray-800 dark:hover:bg-gray-200 rounded-xl hover:shadow-2xl transition-all shadow-sm font-semibold group"
             >
               <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />

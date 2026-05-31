@@ -60,7 +60,7 @@ const WhatIDo = () => {
                         viewport={{ once: true }}
                         className="text-primary-400 font-bold tracking-wider uppercase text-sm mb-2 block"
                     >
-                        Capabilities
+                        Services
                     </motion.span>
                     <motion.h2
                         initial={{ opacity: 0, y: 30 }}
@@ -69,7 +69,7 @@ const WhatIDo = () => {
                         transition={{ delay: 0.1 }}
                         className="text-3xl md:text-5xl font-black text-gray-900 dark:text-white mb-6 tracking-tight"
                     >
-                        What I <span>Do Best</span>
+                        What <span>I do.</span>
                     </motion.h2>
                     <div className="w-24 h-1.5 bg-gray-300 dark:bg-gray-700 mx-auto rounded-full"></div>
                 </motion.div>
