@@ -7,7 +7,7 @@ const WhyHireMe = () => {
   const strengths = [
     {
       title: 'Expert Development',
-      description: 'Proficient in WordPress, PHP, HTML, CSS, and JavaScript with modern best practices.',
+      description: 'Proficient in full‑stack development using React, Next.js, Python, PHP, and modern best practices.',
       icon: Zap,
       color: "from-gray-500/10 to-gray-400/10",
       iconColor: "text-gray-900 dark:text-gray-100"

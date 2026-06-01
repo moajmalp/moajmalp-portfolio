@@ -29,8 +29,8 @@ const WhatIDo = () => {
         },
         {
             icon: Layout,
-            title: "WordPress Solutions",
-            description: "Custom WordPress theme and plugin development to create unique and manageable content management systems.",
+            title: "Full-Stack Development",
+            description: "End-to-end web development using React, Next.js, Python, PHP, and modern best practices to deliver high-performance applications.",
             gradient: "from-gray-500/10 to-gray-400/10",
             iconColor: "text-gray-900 dark:text-gray-100"
         },

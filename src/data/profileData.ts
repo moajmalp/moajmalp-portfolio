@@ -4,25 +4,25 @@ export const profileData: ProfileData = {
     personal: {
         name: "Muhammed Ajmal P",
         shortName: "Ajmal P",
-        title: "WordPress Developer & SEO Specialist",
+        title: "Full‑Stack Developer",
         location: "Malappuram, Kerala",
         email: "hi@moajmalp.in",
         phone: "9526271193",
         cvPath: "/assets/Ajmal-p-CV-01.pdf"
     },
     hero: {
-        headline: "WordPress Developer | SEO Contributor | Software Tester",
-        subtitle: "Building scalable websites and optimizing digital presence for businesses worldwide",
+        headline: "Full‑Stack Developer",
+        subtitle: "React & Next.js frontend, Python & PHP backend. WordPress & SEO side work.",
         cta: {
             downloadCV: "View Resume",
             contact: "Hire Me"
         }
     },
     about: {
-        summary: "Experienced WordPress Developer and SEO Specialist with a proven track record in website development, search engine optimization, and digital marketing. Skilled in WordPress development, on-page and off-page SEO, content optimization, and website maintenance. Proficient in HTML, CSS, JavaScript, and PHP. Strong problem-solving abilities, excellent team collaboration skills, and adaptability to fast-paced environments. Currently pursuing advanced studies in Arabic Literature while maintaining active professional engagements in web development and SEO.",
+        summary: "Full‑Stack Developer specializing in React, Next.js, Python, and PHP, with additional expertise in WordPress and SEO. Skilled in building scalable web applications, API development, and modern front‑end architectures. Passionate about delivering high‑performance, secure solutions across the stack.",
         location: "Malappuram, Kerala"
     },
-    biography: "Experienced WordPress Developer and SEO Specialist with a proven track record in website development, search engine optimization, and digital marketing. Skilled in WordPress development, on-page and off-page SEO, content optimization, and website maintenance. Proficient in HTML, CSS, JavaScript, and PHP. Strong problem-solving abilities, excellent team collaboration skills, and adaptability to fast-paced environments. Currently pursuing advanced studies in Arabic Literature while maintaining active professional engagements in web development and SEO.",
+    biography: "Full‑Stack Developer with extensive experience in React, Next.js, Python, and PHP. Also proficient in WordPress theme/plugin development and SEO strategies. Adept at creating performant, maintainable codebases and delivering end‑to‑end solutions.",
     skills: {
         technical: [
             {
@@ -123,7 +123,7 @@ export const profileData: ProfileData = {
     experience: [
         {
             id: 1,
-            title: "WordPress Developer & SEO Contributor",
+            title: "Full‑Stack Developer (React, Next.js, Python, PHP)",
             company: "CODO AI Innovations",
             location: "Remote",
             startDate: "June 2024",
@@ -217,9 +217,9 @@ export const profileData: ProfileData = {
     },
     seo: {
         baseUrl: "https://moajmalp.in",
-        defaultTitle: "Muhammed Ajmal P - WordPress Developer & SEO Specialist",
-        defaultDescription: "Professional WordPress Developer and SEO Specialist based in Malappuram, Kerala. Expert in website development, search engine optimization, and digital marketing.",
-        defaultKeywords: "WordPress Developer, SEO Specialist, Web Developer, Digital Marketing, Website Development, Kerala",
+        defaultTitle: "Muhammed Ajmal P - Full‑Stack Developer",
+        defaultDescription: "Full‑Stack Developer skilled in React, Next.js, Python, PHP, with additional WordPress and SEO expertise. Building modern web solutions for diverse clients.",
+        defaultKeywords: "Full‑Stack Developer, React, Next.js, Python, PHP, WordPress, SEO, Web Development, Kerala",
         author: "Muhammed Ajmal P",
         ogImage: "/og-image.jpg"
     },
@@ -330,7 +330,7 @@ export const profileData: ProfileData = {
     faqs: [
         {
             question: "What services do you offer?",
-            answer: "I offer a range of services including Custom WordPress Development, Website Performance Optimization, SEO Audits & Strategy, and Full-Stack Web Development using modern technologies like React."
+            answer: "I offer Full‑Stack Web Development with React, Next.js, Python, PHP, as well as WordPress custom development and SEO optimization services."
         },
         {
             question: "How can I contact you for a project?",
@@ -342,7 +342,7 @@ export const profileData: ProfileData = {
         },
         {
             question: "What technologies do you specialize in?",
-            answer: "My core stack includes WordPress (PHP), React, TypeScript, Tailwind CSS, and Node.js. for SEO, I use various tools like Ahrefs, SEMrush, and Google Analytics."
+            answer: "My core stack includes React, Next.js, TypeScript, Tailwind CSS, Node.js, Python, and PHP. I also work with WordPress and employ SEO tools such as Ahrefs, SEMrush, and Google Analytics."
         }
     ],
     certifications: [

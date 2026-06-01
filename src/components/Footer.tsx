@@ -14,7 +14,7 @@ const Footer = () => {
               {profileData.personal.name}
             </h3>
             <p className="text-gray-600 dark:text-gray-400 max-w-sm leading-relaxed">
-              WordPress Developer & SEO Specialist building scalable, high-performance web solutions for businesses worldwide.
+              Full‑Stack Developer with expertise in WordPress & SEO building scalable, high-performance web solutions for businesses worldwide.
             </p>
           </div>
 

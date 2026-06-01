@@ -25,7 +25,7 @@ const TechStackSlider = () => {
               Technical <span className="text-primary-500 dark:text-primary-400 lowercase">skills.</span>
             </h2>
             <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base leading-relaxed font-medium max-w-xl">
-              Over the years, I have built deep expertise in custom WordPress development, speed optimization, and search engine strategies. I focus on writing high-performance, clean code, scaling custom configurations, and building optimized digital experiences that rank highly on search engines and convert visitors.
+              As a full‑stack developer, I design and deliver web solutions using React, Next.js, Python, and PHP. I integrate modern UI/UX, RESTful APIs, and cloud deployments, while also supporting WordPress projects and SEO optimization to ensure scalable, secure, and search‑friendly applications for global AI start‑ups .
             </p>
           </motion.div>
 
