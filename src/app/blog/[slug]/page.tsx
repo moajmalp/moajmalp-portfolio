@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, Calendar, Clock, Tag, User, BookOpen } from 'lucide-react';
 import { profileData } from '../../../data/profileData';
@@ -28,14 +29,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     const blog = getBlogData(slug);
     if (!blog) return { title: 'Article Not Found' };
 
+    const articleUrl = `https://moajmalp.in/blog/${slug}`;
+
     return {
-        title: `${blog.title} | Muhammed Ajmal P`,
+        title: `${blog.title} | Muhammed Ajmal P Blog`,
         description: blog.excerpt,
+        alternates: {
+            canonical: articleUrl,
+        },
         openGraph: {
+            title: `${blog.title} | Muhammed Ajmal P`,
+            description: blog.excerpt,
+            url: articleUrl,
+            siteName: "Muhammed Ajmal P Portfolio",
+            type: "article",
+            publishedTime: new Date(blog.date).toISOString(),
+            authors: ["Muhammed Ajmal P"],
+            images: [{ url: blog.image, alt: blog.title }],
+        },
+        twitter: {
+            card: "summary_large_image",
             title: blog.title,
             description: blog.excerpt,
-            images: [{ url: blog.image }],
-        },
+            images: [blog.image],
+        }
     };
 }
 
@@ -209,9 +226,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 
                 {/* Hero Illustration Container */}
                 <div className="relative aspect-[16/9] bg-zinc-50 dark:bg-[#0c0c0c] border border-gray-250/20 dark:border-white/5 p-4 rounded-3xl overflow-hidden shadow-2xl mb-12 flex items-center justify-center">
-                    <img
+                    <Image
                         src={blog.image}
-                        alt={blog.title}
+                        alt={`${blog.title} - In-depth Tech perspective by Muhammed Ajmal P`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 896px"
+                        priority
                         className="w-full h-full object-cover rounded-2xl shadow-md"
                     />
                 </div>

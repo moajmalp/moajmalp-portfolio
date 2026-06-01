@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Calendar, User, ArrowRight, Tag } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 import PageHeader from '../../components/common/PageHeader';
@@ -27,9 +28,11 @@ export default function Blog() {
                             {/* Image */}
                             <div className="md:w-2/5 relative overflow-hidden h-48 md:h-full">
                                 <div className="absolute inset-0 bg-primary-600/10 group-hover:bg-primary-600/0 transition-colors z-10 mix-blend-overlay"></div>
-                                <img
+                                <Image
                                     src={blog.image}
-                                    alt={blog.title}
+                                    alt={`${blog.title} - Muhammed Ajmal P Web Design & Development blog article`}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, 40vw"
                                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
                                 />
 

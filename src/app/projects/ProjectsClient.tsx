@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { Github, ExternalLink, Layers } from 'lucide-react';
 import { profileData } from '../../data/profileData';
 import PageHeader from '../../components/common/PageHeader';
@@ -21,16 +22,18 @@ export default function Projects() {
                             key={project.id}
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ delay: index * 0.1 }}
+                            transition={{ delay: index * 0.15 }}
                             whileHover={{ y: -10 }}
                             className="group relative bg-white dark:bg-gray-900 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-800 hover:border-primary-500/50 dark:hover:border-primary-500/50 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-primary-500/10 flex flex-col h-full"
                         >
                             {/* Image Container */}
                             <div className="relative h-64 overflow-hidden shrink-0">
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent z-10 opacity-60 group-hover:opacity-40 transition-opacity"></div>
-                                <img
+                                <Image
                                     src={project.image}
-                                    alt={project.title}
+                                    alt={`${project.title} - Custom Software Design project built by Muhammed Ajmal P`}
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                     className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
                                 />
 

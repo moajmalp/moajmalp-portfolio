@@ -1,6 +1,7 @@
 "use client";
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, Tag, Clock } from 'lucide-react';
 import { profileData } from '../../data/profileData';
@@ -67,9 +68,11 @@ const BlogPreview = () => {
 
                             <div className="relative h-full flex flex-col bg-white/40 dark:bg-white/[0.03] backdrop-blur-xl rounded-[3rem] overflow-hidden border border-gray-200/50 dark:border-white/10 shadow-2xl shadow-black/5 hover:border-primary-500/30 transition-all duration-500">
                                 <div className="relative h-72 lg:h-80 overflow-hidden">
-                                    <img
+                                    <Image
                                         src={blog.image}
-                                        alt={blog.title}
+                                        alt={`${blog.title} - Web Development & SEO Article by Muhammed Ajmal P`}
+                                        fill
+                                        sizes="(max-width: 768px) 100vw, 50vw"
                                         className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent"></div>

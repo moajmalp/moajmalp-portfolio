@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { useResumeModal } from '../../context/ResumeModalContext';
 
 const AboutMe = () => {
@@ -49,9 +50,12 @@ const AboutMe = () => {
               
               {/* Main Circular Profile Photo */}
               <div className="relative w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-gray-100 dark:border-zinc-800 shadow-2xl z-10 bg-zinc-900">
-                <img
+                <Image
                   src="/profile.png"
-                  alt="Muhammed Ajmal P"
+                  alt="Muhammed Ajmal P - Full Stack Developer Profile Photo"
+                  fill
+                  sizes="(max-width: 640px) 240px, 288px"
+                  priority
                   className="w-full h-full object-cover grayscale contrast-110 brightness-95"
                   style={{ transform: 'scale(1.45)', transformOrigin: 'center 20%' }}
                 />

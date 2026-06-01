@@ -11,14 +11,28 @@ export const viewport = {
 };
 
 export const metadata: Metadata = {
-    title: "Muhammed Ajmal P | Full Stack Developer",
-    description: "Portfolio of Muhammed Ajmal P, a Full Stack Developer specializing in modern web technologies.",
-    keywords: ["Full Stack Developer", "Muhammed Ajmal P", "Portfolio", "React", "Next.js", "Web Development"],
+    metadataBase: new URL("https://moajmalp.in"),
+    title: "Muhammed Ajmal P | Full Stack Developer & SEO Strategist",
+    description: "Portfolio of Muhammed Ajmal P, a Full Stack Developer specializing in custom WordPress engineering, React, Next.js, and strategic SEO development.",
+    keywords: ["Full Stack Developer", "Muhammed Ajmal P", "Portfolio", "WordPress Developer", "SEO Specialist", "React Developer", "Next.js Portfolio", "MANUU", "Arabic Literature scholar"],
     authors: [{ name: "Muhammed Ajmal P" }],
     robots: "index, follow",
     icons: {
         icon: "/assets/logo.png",
     },
+    openGraph: {
+        title: "Muhammed Ajmal P | Full Stack Developer & SEO Strategist",
+        description: "Portfolio of Muhammed Ajmal P, a Full Stack Developer specializing in custom WordPress engineering, React, Next.js, and strategic SEO development.",
+        url: "https://moajmalp.in",
+        siteName: "Muhammed Ajmal P Portfolio",
+        locale: "en_US",
+        type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Muhammed Ajmal P | Full Stack Developer & SEO Strategist",
+        description: "Portfolio of Muhammed Ajmal P, a Full Stack Developer specializing in custom WordPress engineering, React, Next.js, and strategic SEO development.",
+    }
 };
 
 export default function RootLayout({

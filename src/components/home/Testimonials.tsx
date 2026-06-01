@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 import { profileData } from '../../data/profileData';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -104,10 +105,12 @@ const Testimonials = () => {
 
                                     <div className="flex items-center gap-4">
                                         {/* Avatar with gradient border */}
-                                        <div className="p-0.5 bg-gray-200 dark:bg-gray-700 rounded-full">
-                                            <img
+                                        <div className="p-0.5 bg-gray-200 dark:bg-gray-700 rounded-full flex items-center justify-center">
+                                            <Image
                                                 src={currentTestimonial.avatar}
-                                                alt={currentTestimonial.name}
+                                                alt={`${currentTestimonial.name} - Client Testimonial Avatar`}
+                                                width={48}
+                                                height={48}
                                                 className="w-12 h-12 rounded-full object-cover border-2 border-white dark:border-gray-800"
                                             />
                                         </div>

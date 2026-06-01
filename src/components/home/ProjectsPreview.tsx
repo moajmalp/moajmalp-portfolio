@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { profileData } from '../../data/profileData';
 
 const ProjectsPreview = () => {
@@ -56,9 +57,11 @@ const ProjectsPreview = () => {
                         {/* Outer dark image container box */}
                         <div className="relative aspect-[4/3] bg-zinc-50 dark:bg-[#0c0c0c] border border-gray-250/20 dark:border-white/5 p-4 rounded-[2rem] group-hover:border-primary-500/35 transition-all duration-300 shadow-xl overflow-hidden flex items-center justify-center">
                             {/* Visual mockup screenshot */}
-                            <img
+                            <Image
                                 src={project.image}
-                                alt={project.title}
+                                alt={`${project.title} - Custom Web Design & Engineering project by Muhammed Ajmal P`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 className="w-full h-full object-cover rounded-2xl group-hover:scale-[1.02] transition-transform duration-500 shadow-md"
                             />
                         </div>
