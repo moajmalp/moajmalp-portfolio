@@ -94,7 +94,7 @@ const Testimonials = () => {
                         >
                             <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 md:p-12 shadow-xl border border-gray-100 dark:border-gray-700 relative mx-auto max-w-3xl">
                                 <div className="absolute -top-6 left-1/2 -translate-x-1/2 bg-gray-100 dark:bg-gray-800 p-3 rounded-full shadow-sm border border-gray-200 dark:border-gray-700">
-                                    <Quote className="w-6 h-6 text-white text-center" />
+                                    <Quote className="w-6 h-6 text-primary-600 dark:text-primary-400 text-center" />
                                 </div>
 
                                 <div className="flex flex-col items-center text-center mt-6">

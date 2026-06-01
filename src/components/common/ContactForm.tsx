@@ -212,7 +212,7 @@ const ContactForm = ({ formLabels }: ContactFormProps) => {
                             name="name"
                             required
                             onChange={() => handleInputChange('name')}
-                            className={`w-full bg-white/5 border ${errors.name ? 'border-amber-500 focus:ring-amber-500/50' : 'border-gray-200/20 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all font-medium`}
+                            className={`w-full bg-gray-50 dark:bg-white/5 border ${errors.name ? 'border-amber-500 focus:ring-amber-500/55' : 'border-gray-200 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 transition-all font-medium`}
                             placeholder="Enter name"
                         />
                         <AnimatePresence>
@@ -246,7 +246,7 @@ const ContactForm = ({ formLabels }: ContactFormProps) => {
                             name="email"
                             required
                             onChange={() => handleInputChange('email')}
-                            className={`w-full bg-white/5 border ${errors.email ? 'border-amber-500 focus:ring-amber-500/50' : 'border-gray-200/20 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all font-medium`}
+                            className={`w-full bg-gray-50 dark:bg-white/5 border ${errors.email ? 'border-amber-500 focus:ring-amber-500/55' : 'border-gray-200 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 transition-all font-medium`}
                             placeholder="Enter email"
                         />
                         <AnimatePresence>
@@ -280,7 +280,7 @@ const ContactForm = ({ formLabels }: ContactFormProps) => {
                             required
                             rows={5}
                             onChange={() => handleInputChange('message')}
-                            className={`w-full bg-white/5 border ${errors.message ? 'border-amber-500 focus:ring-amber-500/50' : 'border-gray-200/20 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-500 focus:outline-none focus:ring-2 transition-all resize-none font-medium`}
+                            className={`w-full bg-gray-50 dark:bg-white/5 border ${errors.message ? 'border-amber-500 focus:ring-amber-500/55' : 'border-gray-200 dark:border-white/10 focus:ring-primary-500/50 focus:border-primary-500/50'} rounded-xl px-4 py-3.5 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 focus:outline-none focus:ring-2 transition-all resize-none font-medium`}
                             placeholder="Enter message"
                         />
                         <AnimatePresence>

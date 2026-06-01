@@ -21,10 +21,10 @@ const PageHeader = ({ subtitle, title, highlight, description }: PageHeaderProps
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
             >
-                <span className="text-primary-400 font-semibold tracking-wider uppercase text-sm mb-2 block">
+                <span className="text-primary-600 dark:text-primary-400 font-semibold tracking-wider uppercase text-sm mb-2 block">
                     {subtitle}
                 </span>
-                <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
                     {highlight ? (
                         <>
                             {titleParts[0]}
@@ -38,7 +38,7 @@ const PageHeader = ({ subtitle, title, highlight, description }: PageHeaderProps
                     )}
                 </h1>
                 <div className="w-24 h-1.5 bg-gradient-to-r from-primary-400 to-primary-600 mx-auto rounded-full mb-6"></div>
-                <p className="text-gray-300 text-lg leading-relaxed">
+                <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                     {description}
                 </p>
             </motion.div>
