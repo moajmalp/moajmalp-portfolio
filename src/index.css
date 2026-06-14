@@ -44,6 +44,17 @@
   body {
     @apply antialiased bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 bg-fixed min-h-screen text-slate-900 dark:text-white;
     transition: background-color 0.5s ease, color 0.5s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
   }
 
   * {

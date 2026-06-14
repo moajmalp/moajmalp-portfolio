@@ -28,13 +28,18 @@ export default function ClientLayout({
         const handleContextMenu = (e: MouseEvent) => {
             e.preventDefault();
         };
+        const handleCopy = (e: ClipboardEvent) => {
+            e.preventDefault();
+        };
 
         window.addEventListener('mousemove', handleGlobalMouseMove);
         window.addEventListener('contextmenu', handleContextMenu);
+        window.addEventListener('copy', handleCopy as EventListener);
 
         return () => {
             window.removeEventListener('mousemove', handleGlobalMouseMove);
             window.removeEventListener('contextmenu', handleContextMenu);
+            window.removeEventListener('copy', handleCopy as EventListener);
         };
     }, []);
 

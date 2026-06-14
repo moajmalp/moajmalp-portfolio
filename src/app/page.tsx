@@ -1,5 +1,19 @@
+import { Metadata } from 'next';
 import HomeClient from '../components/home/HomeClient';
 import { profileData } from '../data/profileData';
+
+export const metadata: Metadata = {
+    title: "Muhammed Ajmal P | Full Stack Developer & SEO Specialist",
+    description: "Muhammed Ajmal P is a professional Full Stack Developer and SEO Specialist specializing in custom WordPress engineering, React, Next.js, and strategic SEO development.",
+    keywords: ["Full Stack Developer", "Muhammed Ajmal P", "WordPress Developer", "SEO Specialist", "React Developer", "Kerala"],
+    openGraph: {
+        title: "Muhammed Ajmal P | Full Stack Developer & SEO Specialist",
+        description: "Muhammed Ajmal P is a professional Full Stack Developer and SEO Specialist specializing in custom WordPress engineering, React, Next.js, and strategic SEO development.",
+        url: "https://moajmalp.in",
+        siteName: "Muhammed Ajmal P Portfolio",
+        type: "website",
+    },
+};
 
 export default function Home() {
     const jsonLd = {

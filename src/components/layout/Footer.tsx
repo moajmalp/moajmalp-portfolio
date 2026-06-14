@@ -43,7 +43,7 @@ const Footer = () => {
                     <div className="text-center">
                         <h3 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-6">Quick Links</h3>
                         <ul className="space-y-4">
-                            {['Home', 'About Me', 'Featured projects'].map((item) => (
+                            {['Home', 'About Me', 'Projects'].map((item) => (
                                 <li key={item}>
                                     <a
                                         href={item === "Home" ? "/" : item === "About Me" ? "/#about-me" : "/projects"}
